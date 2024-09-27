@@ -1,0 +1,1720 @@
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\Events\CreateEvent\CreateEventCommand.cs
+FN:6,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_Name()
+FNDA:35,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_Name()
+DA:7,35
+FN:7,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_Description()
+FNDA:28,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_Description()
+DA:8,28
+FN:8,System.DateTime ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_date()
+FNDA:28,System.DateTime ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_date()
+DA:9,28
+FN:9,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_TypeEvent()
+FNDA:33,System.String ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_TypeEvent()
+DA:10,33
+FN:10,System.Byte[] ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_ImageContent()
+FNDA:28,System.Byte[] ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommand::get_ImageContent()
+DA:11,28
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:5
+FNH:5
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\Events\CreateEvent\CreateEventCommandHandler.cs
+FN:17,System.Void ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommandHandler::.ctor(ArtForAll.Infrastructure.EFRepositories.Interfaces.IEventMutationsRepository,ArtForAll.Events.S3ImagesBuckets.Interfaces.IEventImageService)
+FNDA:1,System.Void ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommandHandler::.ctor(ArtForAll.Infrastructure.EFRepositories.Interfaces.IEventMutationsRepository,ArtForAll.Events.S3ImagesBuckets.Interfaces.IEventImageService)
+DA:18,1
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+FN:23,System.Void ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommandHandler/<HandleAsync>d__3::MoveNext()
+FNDA:7,System.Void ArtForAll.Core.Commanding.Events.CreateEvent.CreateEventCommandHandler/<HandleAsync>d__3::MoveNext()
+DA:24,7
+DA:25,7
+DA:26,7
+DA:27,7
+DA:28,7
+DA:30,7
+DA:31,3
+DA:32,3
+DA:34,4
+DA:35,4
+DA:37,4
+DA:38,0
+DA:39,0
+DA:42,4
+DA:44,4
+DA:45,1
+DA:46,1
+DA:50,3
+DA:51,3
+DA:52,0
+DA:53,0
+DA:56,3
+DA:59,3
+DA:60,0
+DA:61,0
+DA:64,3
+DA:65,7
+BRDA:30,97,0,3
+BRDA:30,97,1,4
+BRDA:37,185,0,0
+BRDA:37,185,1,4
+BRDA:44,362,0,1
+BRDA:44,362,1,3
+BRDA:51,435,0,0
+BRDA:51,435,1,3
+BRDA:59,601,0,0
+BRDA:59,601,1,3
+LF:32
+LH:26
+BRF:10
+BRH:7
+FNF:2
+FNH:2
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\extensions\DIRegistration.cs
+FN:10,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.Core.Commanding.extensions.DIRegistration::AddComandHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.Core.Commanding.extensions.DIRegistration::AddComandHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:11,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+BRDA:18,124,1,0
+BRDA:18,124,0,0
+FN:25,System.Boolean ArtForAll.Events.Core.Commanding.extensions.DIRegistration::IsHandlerInterface(System.Type)
+FNDA:0,System.Boolean ArtForAll.Events.Core.Commanding.extensions.DIRegistration::IsHandlerInterface(System.Type)
+DA:26,0
+DA:27,0
+DA:28,0
+BRDA:27,7,0,0
+BRDA:27,7,1,0
+FN:30,System.Void ArtForAll.Events.Core.Commanding.extensions.DIRegistration::AddHandlerWithDecorator(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
+FNDA:0,System.Void ArtForAll.Events.Core.Commanding.extensions.DIRegistration::AddHandlerWithDecorator(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
+DA:31,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+BRDA:34,77,1,0
+BRDA:34,77,0,0
+BRDA:45,95,1,0
+BRDA:45,95,0,0
+FN:55,System.Collections.Generic.List`1<System.Type> ArtForAll.Events.Core.Commanding.extensions.DIRegistration::GetDecoratorTypes(System.Type)
+FNDA:0,System.Collections.Generic.List`1<System.Type> ArtForAll.Events.Core.Commanding.extensions.DIRegistration::GetDecoratorTypes(System.Type)
+DA:56,0
+DA:57,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:66,0
+DA:67,0
+BRDA:59,21,0,0
+BRDA:59,21,1,0
+LF:41
+LH:0
+BRF:10
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\Events\PatchEvent\PatchEventCommand.cs
+FN:8,System.String ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_EventId()
+FNDA:25,System.String ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_EventId()
+DA:9,25
+FN:9,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1<ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest> ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_PatchDocument()
+FNDA:19,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1<ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest> ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_PatchDocument()
+DA:10,19
+FN:10,System.Byte[] ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_Image()
+FNDA:19,System.Byte[] ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommand::get_Image()
+DA:11,19
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\Events\PatchEvent\PatchEventCommandHandler.cs
+FN:19,System.Void ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommandHandler::.ctor(ArtForAll.Infrastructure.EFRepositories.Interfaces.IEventMutationsRepository,ArtForAll.Events.S3ImagesBuckets.Interfaces.IEventImageService)
+FNDA:1,System.Void ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommandHandler::.ctor(ArtForAll.Infrastructure.EFRepositories.Interfaces.IEventMutationsRepository,ArtForAll.Events.S3ImagesBuckets.Interfaces.IEventImageService)
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+DA:24,1
+FN:25,System.Void ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommandHandler/<HandleAsync>d__3::MoveNext()
+FNDA:5,System.Void ArtForAll.Events.Core.Commanding.Events.PatchEvent.PatchEventCommandHandler/<HandleAsync>d__3::MoveNext()
+DA:26,5
+DA:27,5
+DA:29,5
+DA:30,1
+DA:31,1
+DA:34,4
+DA:35,4
+DA:36,4
+DA:37,4
+DA:38,4
+DA:39,4
+DA:40,4
+DA:42,4
+DA:44,4
+DA:46,4
+DA:47,0
+DA:48,0
+DA:51,4
+DA:52,4
+DA:53,4
+DA:54,4
+DA:56,4
+DA:57,0
+DA:58,0
+DA:61,4
+DA:62,4
+DA:63,4
+DA:64,4
+DA:65,4
+DA:66,4
+DA:67,4
+DA:68,4
+DA:69,4
+DA:72,4
+DA:73,4
+DA:74,0
+DA:75,0
+DA:78,4
+DA:80,4
+DA:82,4
+DA:83,0
+DA:84,0
+DA:88,4
+DA:89,5
+BRDA:29,196,0,1
+BRDA:29,196,1,4
+BRDA:46,391,0,0
+BRDA:46,391,1,4
+BRDA:56,497,0,0
+BRDA:56,497,1,4
+BRDA:73,694,0,0
+BRDA:73,694,1,4
+BRDA:82,992,0,0
+BRDA:82,992,1,4
+LF:49
+LH:41
+BRF:10
+BRH:6
+FNF:2
+FNH:2
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\decorators\Auditing\AuditLogAttribute.cs
+FN:5,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLogAttribute::.ctor()
+FNDA:0,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLogAttribute::.ctor()
+DA:6,0
+DA:7,0
+DA:8,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\applicationServices\ArtForAll.Events.Core.Commanding\decorators\Auditing\AuditLoggingDecorator.cs
+FN:9,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLoggingDecorator`2::.ctor(ArtForAll.Shared.Contracts.CQRS.ICommandHandler`2<TCommand,TResult>)
+FNDA:0,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLoggingDecorator`2::.ctor(ArtForAll.Shared.Contracts.CQRS.ICommandHandler`2<TCommand,TResult>)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+FN:15,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLoggingDecorator`2/<HandleAsync>d__2::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Core.Commanding.decorators.Auditing.AuditLoggingDecorator`2/<HandleAsync>d__2::MoveNext()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\ValueObjects\TypeEvent.cs
+FN:18,System.String ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::get_Value()
+FNDA:14,System.String ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::get_Value()
+DA:19,14
+FN:21,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Core.DomainModel.ValueObjects.TypeEvent,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::CreateNew(System.String)
+FNDA:18,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Core.DomainModel.ValueObjects.TypeEvent,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::CreateNew(System.String)
+DA:22,18
+DA:23,18
+DA:24,2
+DA:25,2
+DA:27,16
+DA:28,1
+DA:29,1
+DA:32,15
+DA:33,18
+BRDA:23,7,0,2
+BRDA:23,7,1,16
+BRDA:27,44,0,1
+BRDA:27,44,1,15
+FN:35,System.String ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::op_Implicit(ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+FNDA:14,System.String ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::op_Implicit(ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+DA:36,14
+DA:37,14
+DA:38,14
+FN:40,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::op_Implicit(System.String)
+FNDA:0,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::op_Implicit(System.String)
+DA:41,0
+DA:42,0
+DA:43,0
+FN:10,System.Void ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::.ctor()
+FNDA:0,System.Void ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::.ctor()
+DA:11,0
+FN:12,System.Void ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::.ctor(System.String)
+FNDA:15,System.Void ArtForAll.Core.DomainModel.ValueObjects.TypeEvent::.ctor(System.String)
+DA:13,15
+DA:14,15
+DA:15,15
+DA:16,15
+DA:17,15
+BRDA:15,10,0,0
+BRDA:15,10,1,15
+FN:45,System.Boolean ArtForAll.Core.DomainModel.ValueObjects.TypeEvent/<GetEqualityComponents>d__8::MoveNext()
+FNDA:0,System.Boolean ArtForAll.Core.DomainModel.ValueObjects.TypeEvent/<GetEqualityComponents>d__8::MoveNext()
+DA:46,0
+DA:47,0
+DA:48,0
+LF:25
+LH:18
+BRF:6
+BRH:5
+FNF:7
+FNH:4
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Interfaces\AggregateRoot.cs
+FN:7,System.Collections.Generic.IReadOnlyList`1<ArtForAll.Core.DomainModel.Interfaces.IDomainEvent> ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::get_DomainEvents()
+FNDA:0,System.Collections.Generic.IReadOnlyList`1<ArtForAll.Core.DomainModel.Interfaces.IDomainEvent> ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::get_DomainEvents()
+DA:8,0
+FN:10,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::AddDomainEvent(ArtForAll.Core.DomainModel.Interfaces.IDomainEvent)
+FNDA:8,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::AddDomainEvent(ArtForAll.Core.DomainModel.Interfaces.IDomainEvent)
+DA:11,8
+DA:12,8
+DA:13,8
+DA:14,8
+BRDA:12,9,0,0
+BRDA:12,9,1,8
+FN:16,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::RemoveDomainEvent()
+FNDA:0,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::RemoveDomainEvent()
+DA:17,0
+DA:18,0
+DA:19,0
+BRDA:18,8,0,0
+BRDA:18,8,1,0
+FN:6,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::.ctor()
+FNDA:10,System.Void ArtForAll.Core.DomainModel.Interfaces.AggregateRoot::.ctor()
+DA:7,10
+LF:9
+LH:5
+BRF:4
+BRH:1
+FNF:4
+FNH:2
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Factories\EventFactory.cs
+FN:11,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Event,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Factories.EventFactory::CreateNew(System.String,System.String,System.DateTime,System.String)
+FNDA:7,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Event,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Factories.EventFactory::CreateNew(System.String,System.String,System.DateTime,System.String)
+DA:12,7
+DA:13,7
+DA:14,7
+DA:15,2
+DA:16,2
+DA:20,5
+DA:21,5
+DA:22,1
+DA:23,1
+DA:25,4
+DA:27,4
+DA:28,4
+DA:29,4
+DA:30,4
+DA:31,4
+DA:32,4
+DA:33,4
+DA:34,4
+DA:36,4
+DA:38,4
+DA:39,7
+BRDA:14,18,0,2
+BRDA:14,18,1,5
+BRDA:21,64,0,1
+BRDA:21,64,1,4
+LF:21
+LH:21
+BRF:4
+BRH:4
+FNF:1
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Events\EventCreated.cs
+FN:7,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Id()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Id()
+DA:8,4
+FN:8,System.DateTime ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Date()
+FNDA:4,System.DateTime ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Date()
+DA:9,4
+FN:9,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Description()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Description()
+DA:10,4
+FN:10,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Name()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_Name()
+DA:11,4
+FN:11,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_TypeEvent()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventCreated::get_TypeEvent()
+DA:12,4
+FN:14,System.Void ArtForAll.Events.Core.DomainModel.Events.EventCreated/<Accept>d__20::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Core.DomainModel.Events.EventCreated/<Accept>d__20::MoveNext()
+DA:15,0
+DA:16,0
+DA:17,0
+LF:8
+LH:5
+BRF:0
+BRH:0
+FNF:6
+FNH:5
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Events\EventPatched.cs
+FN:8,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Id()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Id()
+DA:9,4
+FN:9,System.DateTime ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Date()
+FNDA:4,System.DateTime ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Date()
+DA:10,4
+FN:10,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Description()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Description()
+DA:11,4
+FN:11,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Name()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_Name()
+DA:12,4
+FN:12,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_TypeEvent()
+FNDA:4,System.String ArtForAll.Events.Core.DomainModel.Events.EventPatched::get_TypeEvent()
+DA:13,4
+FN:15,System.Void ArtForAll.Events.Core.DomainModel.Events.EventPatched/<Accept>d__20::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Core.DomainModel.Events.EventPatched/<Accept>d__20::MoveNext()
+DA:16,0
+DA:17,0
+DA:18,0
+LF:8
+LH:5
+BRF:0
+BRH:0
+FNF:6
+FNH:5
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Entities\Event.cs
+FN:29,System.String ArtForAll.Events.Core.DomainModel.Entities.Event::get_Name()
+FNDA:24,System.String ArtForAll.Events.Core.DomainModel.Entities.Event::get_Name()
+DA:30,24
+FN:30,System.String ArtForAll.Events.Core.DomainModel.Entities.Event::get_Description()
+FNDA:14,System.String ArtForAll.Events.Core.DomainModel.Entities.Event::get_Description()
+DA:31,14
+FN:31,System.DateTime ArtForAll.Events.Core.DomainModel.Entities.Event::get_Date()
+FNDA:18,System.DateTime ArtForAll.Events.Core.DomainModel.Entities.Event::get_Date()
+DA:32,18
+FN:32,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent ArtForAll.Events.Core.DomainModel.Entities.Event::get_Type()
+FNDA:14,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent ArtForAll.Events.Core.DomainModel.Entities.Event::get_Type()
+DA:33,14
+FN:35,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Event,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Entities.Event::CreateNew(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+FNDA:11,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Event,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Entities.Event::CreateNew(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+DA:36,11
+DA:37,11
+DA:38,1
+DA:39,1
+DA:42,10
+DA:43,0
+DA:44,0
+DA:47,10
+DA:48,0
+DA:49,0
+DA:52,10
+DA:53,0
+DA:54,0
+DA:58,10
+DA:59,11
+BRDA:37,9,0,1
+BRDA:37,9,1,10
+BRDA:42,50,0,0
+BRDA:42,50,1,10
+BRDA:47,77,0,1
+BRDA:47,77,1,9
+BRDA:47,97,0,0
+BRDA:47,97,1,10
+BRDA:52,144,0,0
+BRDA:52,144,1,10
+FN:61,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Events.Core.DomainModel.Entities.Event::Update(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+FNDA:4,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Events.Core.DomainModel.Entities.Event::Update(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+DA:62,4
+DA:63,4
+DA:64,0
+DA:65,0
+DA:68,4
+DA:69,0
+DA:70,0
+DA:73,4
+DA:74,0
+DA:75,0
+DA:78,4
+DA:79,0
+DA:80,0
+DA:83,4
+DA:84,4
+DA:85,4
+DA:86,4
+DA:88,4
+DA:89,4
+BRDA:63,9,0,0
+BRDA:63,9,1,4
+BRDA:68,40,0,0
+BRDA:68,40,1,4
+BRDA:73,57,0,2
+BRDA:73,57,1,2
+BRDA:73,77,0,0
+BRDA:73,77,1,4
+BRDA:78,114,0,0
+BRDA:78,114,1,4
+FN:91,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::AddEventCreatedDomainEvent(ArtForAll.Events.Core.DomainModel.Events.EventCreated)
+FNDA:4,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::AddEventCreatedDomainEvent(ArtForAll.Events.Core.DomainModel.Events.EventCreated)
+DA:92,4
+DA:93,4
+DA:94,4
+FN:96,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::AddEventPatchedDomainEvent(ArtForAll.Events.Core.DomainModel.Events.EventPatched)
+FNDA:4,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::AddEventPatchedDomainEvent(ArtForAll.Events.Core.DomainModel.Events.EventPatched)
+DA:97,4
+DA:98,4
+DA:99,4
+FN:15,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::.ctor()
+FNDA:0,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::.ctor()
+DA:16,0
+FN:17,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::.ctor(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+FNDA:10,System.Void ArtForAll.Events.Core.DomainModel.Entities.Event::.ctor(System.String,System.String,System.DateTime,ArtForAll.Core.DomainModel.ValueObjects.TypeEvent)
+DA:18,10
+DA:19,10
+DA:20,10
+DA:21,10
+DA:23,10
+DA:24,10
+DA:25,10
+DA:26,10
+DA:27,10
+DA:28,10
+BRDA:20,10,0,0
+BRDA:20,10,1,10
+BRDA:21,34,0,0
+BRDA:21,34,1,10
+LF:55
+LH:40
+BRF:24
+BRH:15
+FNF:10
+FNH:9
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\Entities\Image.cs
+FN:21,System.String ArtForAll.Events.Core.DomainModel.Entities.Image::get_EventId()
+FNDA:0,System.String ArtForAll.Events.Core.DomainModel.Entities.Image::get_EventId()
+DA:22,0
+FN:22,System.String ArtForAll.Events.Core.DomainModel.Entities.Image::get_Key()
+FNDA:0,System.String ArtForAll.Events.Core.DomainModel.Entities.Image::get_Key()
+DA:23,0
+FN:23,System.Byte[] ArtForAll.Events.Core.DomainModel.Entities.Image::get_Content()
+FNDA:0,System.Byte[] ArtForAll.Events.Core.DomainModel.Entities.Image::get_Content()
+DA:24,0
+FN:26,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Image,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Entities.Image::CreateNew(System.Byte[],System.String)
+FNDA:7,ArtForAll.Shared.ErrorHandler.Result`2<ArtForAll.Events.Core.DomainModel.Entities.Image,ArtForAll.Shared.Contracts.DDD.Error> ArtForAll.Events.Core.DomainModel.Entities.Image::CreateNew(System.Byte[],System.String)
+DA:27,7
+DA:28,7
+DA:29,7
+FN:11,System.Void ArtForAll.Events.Core.DomainModel.Entities.Image::.ctor(System.Byte[],System.String)
+FNDA:7,System.Void ArtForAll.Events.Core.DomainModel.Entities.Image::.ctor(System.Byte[],System.String)
+DA:12,7
+DA:13,7
+DA:14,7
+DA:16,7
+DA:17,7
+DA:18,7
+DA:19,7
+DA:20,7
+BRDA:14,10,0,0
+BRDA:14,10,1,7
+LF:14
+LH:11
+BRF:2
+BRH:1
+FNF:5
+FNH:2
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\Migrations\20240528124123_initMig.cs
+FN:10,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+FN:28,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+LF:20
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\Migrations\20240528124123_initMig.Designer.cs
+FN:18,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.initMig::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:19,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:25,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:59,0
+LF:37
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\Migrations\EventsContextModelSnapshot.cs
+FN:16,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.EventsContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EventsRepository.Migrations.EventsContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:17,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:57,0
+LF:37
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\EventMutationsRepository.cs
+FN:34,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository::Insert(ArtForAll.Events.Core.DomainModel.Entities.Event)
+FNDA:0,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository::Insert(ArtForAll.Events.Core.DomainModel.Entities.Event)
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:50,0
+DA:51,0
+BRDA:36,7,0,0
+BRDA:36,7,1,0
+FN:15,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository::.ctor(OCP.PortalEvents.Repositories.Context.EventsContext)
+FNDA:2,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository::.ctor(OCP.PortalEvents.Repositories.Context.EventsContext)
+DA:16,2
+DA:17,2
+DA:18,2
+DA:19,2
+FN:21,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository/<FindAsync>d__2::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository/<FindAsync>d__2::MoveNext()
+DA:22,0
+DA:23,0
+DA:24,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:31,0
+DA:32,0
+BRDA:26,308,0,0
+BRDA:26,308,1,0
+FN:53,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository/<SaveChangesAsync>d__4::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EFRepository.EventMutationsRepository/<SaveChangesAsync>d__4::MoveNext()
+DA:54,0
+DA:55,0
+DA:56,0
+LF:27
+LH:4
+BRF:4
+BRH:0
+FNF:4
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\visitors\DomainEventPublisherVisitor.cs
+FN:10,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor::.ctor(ArtForAll.Events.NotificationService.ISnsMessengerService)
+FNDA:2,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor::.ctor(ArtForAll.Events.NotificationService.ISnsMessengerService)
+DA:11,2
+DA:12,2
+DA:13,2
+DA:14,2
+FN:15,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor/<Visit>d__2::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor/<Visit>d__2::MoveNext()
+DA:16,0
+DA:17,0
+DA:18,0
+FN:20,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor/<Visit>d__3::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EFRepository.visitors.DomainEventPublisherVisitor/<Visit>d__3::MoveNext()
+DA:21,0
+DA:22,0
+DA:23,0
+LF:10
+LH:4
+BRF:0
+BRH:0
+FNF:3
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\utils\ConsoleOptions.cs
+FN:4,System.Boolean ArtForAll.Events.Infrastructure.EFRepository.utils.ConsoleOptions::get_UseConsole()
+FNDA:3,System.Boolean ArtForAll.Events.Infrastructure.EFRepository.utils.ConsoleOptions::get_UseConsole()
+DA:5,3
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\utils\EventMutationsExceptionHandler.cs
+FN:11,System.Void ArtForAll.Events.Infrastructure.EFRepository.utils.EventMutationsExceptionHandler::.ctor(Microsoft.Extensions.Logging.ILogger`1<ArtForAll.Events.Infrastructure.EFRepository.utils.EventMutationsExceptionHandler>)
+FNDA:0,System.Void ArtForAll.Events.Infrastructure.EFRepository.utils.EventMutationsExceptionHandler::.ctor(Microsoft.Extensions.Logging.ILogger`1<ArtForAll.Events.Infrastructure.EFRepository.utils.EventMutationsExceptionHandler>)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:62,0
+DA:63,0
+LF:44
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\extensions\DIRegistration.cs
+FN:17,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepositoryServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action`1<ArtForAll.Events.Infrastructure.EFRepository.utils.ConsoleOptions>)
+FNDA:1,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepositoryServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action`1<ArtForAll.Events.Infrastructure.EFRepository.utils.ConsoleOptions>)
+DA:18,1
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,3
+DA:23,3
+DA:24,3
+DA:25,3
+DA:26,3
+DA:27,1
+DA:29,1
+DA:30,1
+FN:31,System.Void ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:1,System.Void ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:32,1
+DA:33,1
+DA:34,1
+DA:35,46
+DA:36,1
+DA:38,5
+DA:39,1
+DA:40,1
+DA:41,1
+DA:42,1
+BRDA:38,88,1,1
+BRDA:38,88,0,1
+BRDA:35,6,0,28
+BRDA:35,6,1,1
+FN:44,System.Void ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
+FNDA:1,System.Void ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::AddRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
+DA:45,1
+DA:46,1
+DA:47,2
+DA:48,1
+DA:49,0
+DA:52,1
+DA:53,2
+DA:54,2
+DA:55,2
+DA:56,3
+DA:57,1
+BRDA:48,71,1,1
+BRDA:48,71,0,1
+FN:59,System.Boolean ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::IsRepositoryInterface(System.Type)
+FNDA:17,System.Boolean ArtForAll.Events.Infrastructure.EFRepository.extensions.DIRegistration::IsRepositoryInterface(System.Type)
+DA:60,17
+DA:61,17
+DA:62,17
+BRDA:61,7,0,2
+BRDA:61,7,1,15
+LF:36
+LH:35
+BRF:8
+BRH:8
+FNF:4
+FNH:4
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\Context\EventsContext.cs
+FN:34,Microsoft.EntityFrameworkCore.DbSet`1<ArtForAll.Events.Core.DomainModel.Entities.Event> OCP.PortalEvents.Repositories.Context.EventsContext::get_Events()
+FNDA:0,Microsoft.EntityFrameworkCore.DbSet`1<ArtForAll.Events.Core.DomainModel.Entities.Event> OCP.PortalEvents.Repositories.Context.EventsContext::get_Events()
+DA:35,0
+FN:37,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
+FNDA:0,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:58,0
+BRDA:51,66,0,0
+BRDA:51,66,1,0
+BRDA:43,11,0,0
+BRDA:43,11,1,0
+FN:60,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:0,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+FN:20,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::.ctor(System.String,System.Boolean,ArtForAll.Events.Core.DomainModel.Interfaces.IDomainEventVisitor,ArtForAll.Shared.ExceptionHandler.IExceptionHandlerBase)
+FNDA:2,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::.ctor(System.String,System.Boolean,ArtForAll.Events.Core.DomainModel.Interfaces.IDomainEventVisitor,ArtForAll.Shared.ExceptionHandler.IExceptionHandlerBase)
+DA:21,2
+DA:22,2
+DA:23,2
+DA:24,2
+DA:25,2
+DA:26,2
+DA:27,2
+FN:30,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<OCP.PortalEvents.Repositories.Context.EventsContext>)
+FNDA:0,System.Void OCP.PortalEvents.Repositories.Context.EventsContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<OCP.PortalEvents.Repositories.Context.EventsContext>)
+DA:31,0
+DA:32,0
+DA:33,0
+FN:116,System.Void OCP.PortalEvents.Repositories.Context.EventsContext/<PublishDomainEvents>d__11::MoveNext()
+FNDA:0,System.Void OCP.PortalEvents.Repositories.Context.EventsContext/<PublishDomainEvents>d__11::MoveNext()
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+BRDA:118,195,1,0
+BRDA:118,195,0,0
+FN:94,System.Void OCP.PortalEvents.Repositories.Context.EventsContext/<SaveChangesAsync>d__10::MoveNext()
+FNDA:0,System.Void OCP.PortalEvents.Repositories.Context.EventsContext/<SaveChangesAsync>d__10::MoveNext()
+DA:95,0
+DA:96,0
+DA:97,0
+DA:100,0
+DA:102,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:113,0
+DA:114,0
+BRDA:104,483,1,0
+BRDA:106,332,0,0
+BRDA:106,332,1,0
+BRDA:104,483,0,0
+BRDA:113,532,0,0
+BRDA:113,532,1,0
+LF:83
+LH:7
+BRF:12
+BRH:0
+FNF:7
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\services\ArtForAll.Events.NotificationService\SnsMessengerService.cs
+FN:11,System.Void ArtForAll.Events.NotificationService.SnsMessengerService::.ctor(Amazon.SimpleNotificationService.IAmazonSimpleNotificationService)
+FNDA:0,System.Void ArtForAll.Events.NotificationService.SnsMessengerService::.ctor(Amazon.SimpleNotificationService.IAmazonSimpleNotificationService)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+FN:39,System.Void ArtForAll.Events.NotificationService.SnsMessengerService/<GetTopicArnAsync>d__4::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.NotificationService.SnsMessengerService/<GetTopicArnAsync>d__4::MoveNext()
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+BRDA:41,34,0,0
+BRDA:41,34,1,0
+FN:17,System.Void ArtForAll.Events.NotificationService.SnsMessengerService/<PublishAsync>d__3`1::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.NotificationService.SnsMessengerService/<PublishAsync>d__3`1::MoveNext()
+DA:18,0
+DA:19,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+LF:31
+LH:0
+BRF:2
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\services\ArtForAll.Events.NotificationService\extensions\DIRegistration.cs
+FN:8,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.NotificationService.extensions.DIRegistration::AddAmazonNotificationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.NotificationService.extensions.DIRegistration::AddAmazonNotificationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+LF:9
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\services\ArtForAll.Events.NotificationService\contracts\EventCreated.cs
+FN:4,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Id()
+FNDA:0,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Id()
+DA:5,0
+FN:5,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Name()
+FNDA:0,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Name()
+DA:6,0
+FN:6,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Description()
+FNDA:0,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_Description()
+DA:7,0
+FN:7,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_TypeEvent()
+FNDA:0,System.String ArtForAll.Events.NotificationService.contracts.EventCreated::get_TypeEvent()
+DA:8,0
+FN:8,System.DateTime ArtForAll.Events.NotificationService.contracts.EventCreated::get_Date()
+FNDA:0,System.DateTime ArtForAll.Events.NotificationService.contracts.EventCreated::get_Date()
+DA:9,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\presentation\ArtForAll.Events.Presentation.DTOs\Events\EventCreateRequest.cs
+FN:4,System.String ArtForAll.Events.Presentation.DTOs.Events.EventCreateRequest::get_Name()
+FNDA:0,System.String ArtForAll.Events.Presentation.DTOs.Events.EventCreateRequest::get_Name()
+DA:5,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\presentation\ArtForAll.Events.Presentation.DTOs\Events\EventPatchRequest.cs
+FN:3,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_Name()
+FNDA:11,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_Name()
+DA:4,11
+FN:4,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_Description()
+FNDA:13,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_Description()
+DA:5,13
+FN:5,System.DateTime ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_date()
+FNDA:8,System.DateTime ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_date()
+DA:6,8
+FN:6,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_TypeEvent()
+FNDA:8,System.String ArtForAll.Events.Presentation.DTOs.Events.EventPatchRequest::get_TypeEvent()
+DA:7,8
+LF:4
+LH:4
+BRF:0
+BRH:0
+FNF:4
+FNH:4
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\services\ArtForAll.Events.S3ImagesBuckets\EventImageService.cs
+FN:12,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService::.ctor(Amazon.S3.IAmazonS3)
+FNDA:0,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService::.ctor(Amazon.S3.IAmazonS3)
+DA:13,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+FN:39,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService/<UpdateImageAsync>d__4::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService/<UpdateImageAsync>d__4::MoveNext()
+DA:40,0
+DA:41,0
+DA:42,0
+FN:20,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService/<UploadImageAsync>d__3::MoveNext()
+FNDA:0,System.Void ArtForAll.Events.S3ImagesBuckets.EventImageService/<UploadImageAsync>d__3::MoveNext()
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:36,0
+DA:37,0
+BRDA:32,276,0,0
+BRDA:32,276,1,0
+LF:22
+LH:0
+BRF:2
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\src\infrastructure\services\ArtForAll.Events.S3ImagesBuckets\extensions\DIRegistration.cs
+FN:9,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.S3ImagesBuckets.Extensions.DIRegistration::AddAmazonS3BucketsServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,Microsoft.Extensions.DependencyInjection.IServiceCollection ArtForAll.Events.S3ImagesBuckets.Extensions.DIRegistration::AddAmazonS3BucketsServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\Users\Oliver.Castro\.nuget\packages\microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs
+FN:3,System.Void AutoGeneratedProgram::Main(System.String[])
+FNDA:0,System.Void AutoGeneratedProgram::Main(System.String[])
+DA:4,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\tests\ArtForAll.Events.Tests.EventTests\ImplicitConversions.cs
+FN:10,System.Void ArtForAll.Events.Tests.EventTests.ImplicitConversions::WhenItCreatesANewEvent_ThenItShouldImplicitlyConverted()
+FNDA:0,System.Void ArtForAll.Events.Tests.EventTests.ImplicitConversions::WhenItCreatesANewEvent_ThenItShouldImplicitlyConverted()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\ErrorHandler\Result.cs
+FN:20,System.Boolean ArtForAll.Shared.ErrorHandler.Result::get_IsSucces()
+FNDA:12,System.Boolean ArtForAll.Shared.ErrorHandler.Result::get_IsSucces()
+DA:21,12
+FN:21,System.Boolean ArtForAll.Shared.ErrorHandler.Result::get_IsFailure()
+FNDA:15,System.Boolean ArtForAll.Shared.ErrorHandler.Result::get_IsFailure()
+DA:22,15
+FN:22,System.String ArtForAll.Shared.ErrorHandler.Result::get_Message()
+FNDA:0,System.String ArtForAll.Shared.ErrorHandler.Result::get_Message()
+DA:23,0
+FN:23,System.String ArtForAll.Shared.ErrorHandler.Result::get_Id()
+FNDA:12,System.String ArtForAll.Shared.ErrorHandler.Result::get_Id()
+DA:24,12
+FN:26,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Success()
+FNDA:20,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Success()
+DA:27,20
+DA:28,20
+DA:29,20
+FN:31,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Success(System.String)
+FNDA:8,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Success(System.String)
+DA:32,8
+DA:33,8
+DA:34,8
+FN:36,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Failure(System.String)
+FNDA:4,ArtForAll.Shared.ErrorHandler.Result ArtForAll.Shared.ErrorHandler.Result::Failure(System.String)
+DA:37,4
+DA:38,4
+DA:39,4
+FN:8,System.Void ArtForAll.Shared.ErrorHandler.Result::.ctor(System.Boolean,System.String)
+FNDA:32,System.Void ArtForAll.Shared.ErrorHandler.Result::.ctor(System.Boolean,System.String)
+DA:9,32
+DA:10,32
+DA:11,32
+DA:12,32
+DA:13,32
+FN:15,System.Void ArtForAll.Shared.ErrorHandler.Result::.ctor(System.Boolean,System.String,System.String)
+FNDA:8,System.Void ArtForAll.Shared.ErrorHandler.Result::.ctor(System.Boolean,System.String,System.String)
+DA:16,8
+DA:17,8
+DA:18,8
+DA:19,8
+LF:22
+LH:21
+BRF:0
+BRH:0
+FNF:9
+FNH:8
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\ErrorHandler\ResultTE.cs
+FN:17,T ArtForAll.Shared.ErrorHandler.Result`2::get_Value()
+FNDA:40,T ArtForAll.Shared.ErrorHandler.Result`2::get_Value()
+DA:18,40
+FN:18,System.Boolean ArtForAll.Shared.ErrorHandler.Result`2::get_IsSucces()
+FNDA:0,System.Boolean ArtForAll.Shared.ErrorHandler.Result`2::get_IsSucces()
+DA:19,0
+FN:19,System.Boolean ArtForAll.Shared.ErrorHandler.Result`2::get_IsFailure()
+FNDA:35,System.Boolean ArtForAll.Shared.ErrorHandler.Result`2::get_IsFailure()
+DA:20,35
+FN:21,E ArtForAll.Shared.ErrorHandler.Result`2::get_Error()
+FNDA:7,E ArtForAll.Shared.ErrorHandler.Result`2::get_Error()
+DA:22,7
+FN:24,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::Success(T)
+FNDA:36,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::Success(T)
+DA:25,36
+DA:26,36
+DA:27,36
+FN:29,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::Failure(E)
+FNDA:8,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::Failure(E)
+DA:30,8
+DA:31,8
+DA:32,8
+FN:34,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::op_Implicit(T)
+FNDA:32,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::op_Implicit(T)
+DA:35,32
+DA:36,32
+DA:37,32
+FN:39,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::op_Implicit(E)
+FNDA:4,ArtForAll.Shared.ErrorHandler.Result`2<T,E> ArtForAll.Shared.ErrorHandler.Result`2::op_Implicit(E)
+DA:40,4
+DA:41,4
+DA:42,4
+FN:10,System.Void ArtForAll.Shared.ErrorHandler.Result`2::.ctor(T,System.Boolean,E)
+FNDA:44,System.Void ArtForAll.Shared.ErrorHandler.Result`2::.ctor(T,System.Boolean,E)
+DA:11,44
+DA:12,44
+DA:13,44
+DA:14,44
+DA:15,44
+DA:16,44
+LF:22
+LH:21
+BRF:0
+BRH:0
+FNF:9
+FNH:8
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\DDD\Entity.cs
+FN:4,System.String ArtForAll.Shared.Contracts.DDD.Entity::get_Id()
+FNDA:40,System.String ArtForAll.Shared.Contracts.DDD.Entity::get_Id()
+DA:5,40
+FN:6,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::Equals(System.Object)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::Equals(System.Object)
+DA:7,0
+DA:8,0
+DA:10,0
+DA:11,0
+DA:13,0
+DA:14,0
+DA:16,0
+DA:17,0
+DA:19,0
+DA:20,0
+DA:22,0
+DA:23,0
+BRDA:10,14,0,0
+BRDA:10,14,1,0
+BRDA:13,26,0,0
+BRDA:13,26,1,0
+BRDA:16,53,0,0
+BRDA:16,53,1,0
+BRDA:19,75,0,0
+BRDA:19,75,1,0
+BRDA:19,100,0,0
+BRDA:19,100,1,0
+FN:25,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::op_Equality(ArtForAll.Shared.Contracts.DDD.Entity,ArtForAll.Shared.Contracts.DDD.Entity)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::op_Equality(ArtForAll.Shared.Contracts.DDD.Entity,ArtForAll.Shared.Contracts.DDD.Entity)
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:31,0
+DA:33,0
+DA:34,0
+BRDA:27,2,0,0
+BRDA:27,2,1,0
+BRDA:27,13,0,0
+BRDA:27,13,1,0
+BRDA:30,20,0,0
+BRDA:30,20,1,0
+BRDA:30,31,0,0
+BRDA:30,31,1,0
+FN:36,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::op_Inequality(ArtForAll.Shared.Contracts.DDD.Entity,ArtForAll.Shared.Contracts.DDD.Entity)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.Entity::op_Inequality(ArtForAll.Shared.Contracts.DDD.Entity,ArtForAll.Shared.Contracts.DDD.Entity)
+DA:37,0
+DA:38,0
+DA:39,0
+FN:41,System.Int32 ArtForAll.Shared.Contracts.DDD.Entity::GetHashCode()
+FNDA:0,System.Int32 ArtForAll.Shared.Contracts.DDD.Entity::GetHashCode()
+DA:42,0
+DA:43,0
+DA:44,0
+LF:26
+LH:1
+BRF:18
+BRH:0
+FNF:5
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\DDD\Error.cs
+FN:14,System.String ArtForAll.Shared.Contracts.DDD.Error::get_Message()
+FNDA:4,System.String ArtForAll.Shared.Contracts.DDD.Error::get_Message()
+DA:15,4
+FN:15,System.String ArtForAll.Shared.Contracts.DDD.Error::get_Code()
+FNDA:0,System.String ArtForAll.Shared.Contracts.DDD.Error::get_Code()
+DA:16,0
+FN:16,System.String ArtForAll.Shared.Contracts.DDD.Error::get_InvalidProperty()
+FNDA:0,System.String ArtForAll.Shared.Contracts.DDD.Error::get_InvalidProperty()
+DA:17,0
+FN:24,System.Void ArtForAll.Shared.Contracts.DDD.Error::SetInvalidProperty(System.String)
+FNDA:0,System.Void ArtForAll.Shared.Contracts.DDD.Error::SetInvalidProperty(System.String)
+DA:25,0
+DA:26,0
+DA:27,0
+FN:29,System.String ArtForAll.Shared.Contracts.DDD.Error::Serialize()
+FNDA:0,System.String ArtForAll.Shared.Contracts.DDD.Error::Serialize()
+DA:30,0
+DA:31,0
+DA:32,0
+FN:34,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Error::Deserialize(System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Error::Deserialize(System.String)
+DA:35,0
+DA:36,0
+DA:37,0
+DA:39,0
+DA:41,0
+DA:42,0
+DA:44,0
+DA:45,0
+BRDA:36,14,0,0
+BRDA:36,14,1,0
+BRDA:41,54,0,0
+BRDA:41,54,1,0
+FN:8,System.Void ArtForAll.Shared.Contracts.DDD.Error::.ctor(System.String,System.String)
+FNDA:5,System.Void ArtForAll.Shared.Contracts.DDD.Error::.ctor(System.String,System.String)
+DA:9,5
+DA:10,5
+DA:11,5
+DA:12,5
+DA:13,5
+FN:19,System.Boolean ArtForAll.Shared.Contracts.DDD.Error/<GetEqualityComponents>d__11::MoveNext()
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.Error/<GetEqualityComponents>d__11::MoveNext()
+DA:20,0
+DA:21,0
+DA:22,0
+LF:25
+LH:6
+BRF:4
+BRH:0
+FNF:8
+FNH:2
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\DDD\Errors.cs
+FN:7,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/Pitch::InvalidCategory(System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/Pitch::InvalidCategory(System.String)
+DA:8,0
+FN:10,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/Pitch::InvalidFieldOfWork(System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/Pitch::InvalidFieldOfWork(System.String)
+DA:11,0
+FN:16,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::ValueIsInvalid()
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::ValueIsInvalid()
+DA:17,0
+FN:19,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::ValueIsRequired()
+FNDA:2,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::ValueIsRequired()
+DA:20,2
+FN:22,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::NotFound(System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::NotFound(System.String)
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+BRDA:24,2,0,0
+BRDA:24,2,1,0
+FN:28,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InvalidLength(System.Int32,System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InvalidLength(System.Int32,System.String)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+BRDA:30,2,0,0
+BRDA:30,2,1,0
+FN:34,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InternalServerError(System.String)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InternalServerError(System.String)
+DA:35,0
+DA:36,0
+DA:37,0
+FN:39,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InvalidQuantity(System.Int32)
+FNDA:0,ArtForAll.Shared.Contracts.DDD.Error ArtForAll.Shared.Contracts.DDD.Errors/General::InvalidQuantity(System.Int32)
+DA:40,0
+DA:41,0
+DA:42,0
+LF:18
+LH:1
+BRF:4
+BRH:0
+FNF:8
+FNH:1
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Events.Shared.DDD\DDD\ValueObject.cs
+FN:9,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::Equals(System.Object)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::Equals(System.Object)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:19,0
+DA:20,0
+BRDA:11,7,0,0
+BRDA:11,7,1,0
+BRDA:14,32,0,0
+BRDA:14,32,1,0
+FN:22,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::GetHashCode()
+FNDA:0,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::GetHashCode()
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:36,0
+DA:37,0
+BRDA:24,17,0,0
+BRDA:24,17,1,0
+BRDA:31,7,0,0
+BRDA:31,7,1,0
+FN:39,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareTo(System.Object)
+FNDA:0,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareTo(System.Object)
+DA:40,0
+DA:41,0
+DA:42,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:59,0
+DA:60,0
+BRDA:44,26,0,0
+BRDA:44,26,1,0
+BRDA:52,140,1,0
+BRDA:55,114,0,0
+BRDA:55,114,1,0
+BRDA:52,140,0,0
+FN:62,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareComponents(System.Object,System.Object)
+FNDA:0,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareComponents(System.Object,System.Object)
+DA:63,0
+DA:64,0
+DA:65,0
+DA:67,0
+DA:68,0
+DA:70,0
+DA:71,0
+DA:73,0
+DA:74,0
+DA:76,0
+DA:77,0
+BRDA:64,2,0,0
+BRDA:64,2,1,0
+BRDA:64,13,0,0
+BRDA:64,13,1,0
+BRDA:67,27,0,0
+BRDA:67,27,1,0
+BRDA:70,41,0,0
+BRDA:70,41,1,0
+BRDA:73,55,0,0
+BRDA:73,55,1,0
+BRDA:73,75,0,0
+BRDA:73,75,1,0
+BRDA:76,94,0,0
+BRDA:76,94,1,0
+FN:79,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareTo(ArtForAll.Shared.Contracts.DDD.ValueObject)
+FNDA:0,System.Int32 ArtForAll.Shared.Contracts.DDD.ValueObject::CompareTo(ArtForAll.Shared.Contracts.DDD.ValueObject)
+DA:80,0
+DA:81,0
+DA:82,0
+FN:84,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::op_Equality(ArtForAll.Shared.Contracts.DDD.ValueObject,ArtForAll.Shared.Contracts.DDD.ValueObject)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::op_Equality(ArtForAll.Shared.Contracts.DDD.ValueObject,ArtForAll.Shared.Contracts.DDD.ValueObject)
+DA:85,0
+DA:86,0
+DA:87,0
+DA:89,0
+DA:90,0
+DA:92,0
+DA:93,0
+BRDA:86,2,0,0
+BRDA:86,2,1,0
+BRDA:86,13,0,0
+BRDA:86,13,1,0
+BRDA:89,20,0,0
+BRDA:89,20,1,0
+BRDA:89,31,0,0
+BRDA:89,31,1,0
+FN:95,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::op_Inequality(ArtForAll.Shared.Contracts.DDD.ValueObject,ArtForAll.Shared.Contracts.DDD.ValueObject)
+FNDA:0,System.Boolean ArtForAll.Shared.Contracts.DDD.ValueObject::op_Inequality(ArtForAll.Shared.Contracts.DDD.ValueObject,ArtForAll.Shared.Contracts.DDD.ValueObject)
+DA:96,0
+DA:97,0
+DA:98,0
+FN:100,System.Type ArtForAll.Shared.Contracts.DDD.ValueObject::GetUnproxiedType(System.Object)
+FNDA:0,System.Type ArtForAll.Shared.Contracts.DDD.ValueObject::GetUnproxiedType(System.Object)
+DA:101,0
+DA:105,0
+DA:106,0
+DA:108,0
+DA:109,0
+DA:111,0
+DA:112,0
+BRDA:108,26,0,0
+BRDA:108,26,1,0
+BRDA:108,44,0,0
+BRDA:108,44,1,0
+LF:69
+LH:0
+BRF:40
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Shared.ExceptionHandler\ExceptionHandlerBase.cs
+FN:61,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase::Catch(System.Action`1<System.Exception>)
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase::Catch(System.Action`1<System.Exception>)
+DA:62,0
+DA:63,0
+DA:65,0
+DA:66,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+BRDA:68,61,0,0
+BRDA:68,61,1,0
+FN:9,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase::.ctor()
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase::.ctor()
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+FN:15,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase/<HandleAsync>d__2::MoveNext()
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase/<HandleAsync>d__2::MoveNext()
+DA:16,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:34,0
+DA:35,0
+BRDA:24,183,0,0
+BRDA:24,183,1,0
+FN:37,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase/<HandleAsync>d__3`1::MoveNext()
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.ExceptionHandlerBase/<HandleAsync>d__3`1::MoveNext()
+DA:38,0
+DA:40,0
+DA:41,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:57,0
+DA:59,0
+BRDA:46,196,0,0
+BRDA:46,196,1,0
+LF:49
+LH:0
+BRF:6
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Shared.ExceptionHandler\exceptions\EventMutationsExceptionHandler.cs
+FN:8,System.Void ArtForAll.Shared.ExceptionHandler.Exceptions.EventMutationsExceptionHandler::.ctor(Microsoft.Extensions.Logging.ILogger`1<ArtForAll.Shared.ExceptionHandler.Exceptions.EventMutationsExceptionHandler>)
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.Exceptions.EventMutationsExceptionHandler::.ctor(Microsoft.Extensions.Logging.ILogger`1<ArtForAll.Shared.ExceptionHandler.Exceptions.EventMutationsExceptionHandler>)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+LF:14
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:E:\CustomRepos\artForAll-events-mutations\shared\ArtForAll.Shared.ExceptionHandler\exceptions\UnHandlerException.cs
+FN:10,System.String ArtForAll.Shared.ExceptionHandler.Exceptions.UnHandlerException::get_ExceptionMessage()
+FNDA:0,System.String ArtForAll.Shared.ExceptionHandler.Exceptions.UnHandlerException::get_ExceptionMessage()
+DA:11,0
+FN:5,System.Void ArtForAll.Shared.ExceptionHandler.Exceptions.UnHandlerException::.ctor(System.String)
+FNDA:0,System.Void ArtForAll.Shared.ExceptionHandler.Exceptions.UnHandlerException::.ctor(System.String)
+DA:6,0
+DA:7,0
+DA:8,0
+DA:9,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record

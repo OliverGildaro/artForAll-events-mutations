@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.20" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.20" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\ArtForAll.Events.Infrastructure.EFRepository.csproj" />
+    <ProjectReference Include="..\..\..\infrastructure\services\ArtForAll.Events.NotificationService\ArtForAll.Events.NotificationService.csproj" />
+    <ProjectReference Include="..\..\..\infrastructure\services\ArtForAll.Events.S3ImagesBuckets\ArtForAll.Events.S3ImagesBuckets.csproj" />
+    <ProjectReference Include="..\..\..\presentation\ArtForAll.Events.Presentation.DTOs\ArtForAll.Events.Presentation.DTOs.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,127 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3C89E3C9-4205-4F40-BF1B-E8C2C859C79B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D71A9E7D-7006-4A4B-A1B2-7BCFE5DAACEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{A939BFD4-8982-4D18-994F-081A31FB0B3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{90BD3615-1F19-4B0B-A812-3C2CCA11AA14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{051FDECE-AB44-4AF6-BBE5-1E6EE49D3D9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repositories", "repositories", "{517B2016-E1FE-4E9F-8BDE-9246A26A1554}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "applicationServices", "applicationServices", "{F17225BA-30EF-45FD-8064-1974D983D52F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{A9364AE4-E377-4E6A-9817-0831C9AA6C1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domainModel", "domainModel", "{C1BDD149-8C13-4CD0-8D22-1C0258407E9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domainServices", "domainServices", "{C941AB80-27E1-4D64-AFB9-A951CAE47AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.Core.DomainModel", "src\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\ArtForAll.Events.Core.DomainModel.csproj", "{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.Infrastructure.EFRepository", "src\infrastructure\repositories\ArtForAll.Events.Infrastructure.EventsRepository\ArtForAll.Events.Infrastructure.EFRepository.csproj", "{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.Core.Commanding", "src\core\applicationServices\ArtForAll.Events.Core.Commanding\ArtForAll.Events.Core.Commanding.csproj", "{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.Presentation.DTOs", "src\presentation\ArtForAll.Events.Presentation.DTOs\ArtForAll.Events.Presentation.DTOs.csproj", "{99272145-CAAA-4DD3-9022-00FE5F0A1A02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.UnitTests", "tests\ArtForAll.Events.Tests.EventTests\ArtForAll.Events.UnitTests.csproj", "{D2224CAB-A463-4B92-9F6F-D75855B7AD55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.Presentation.API", "src\presentation\ArtForAll.Events.Presentation.API\ArtForAll.Events.Presentation.API.csproj", "{CD47B4BE-279F-441D-9F96-689E51730D5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C14411FD-B02A-4613-8D3B-E38185E338E4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.NotificationService", "src\infrastructure\services\ArtForAll.Events.NotificationService\ArtForAll.Events.NotificationService.csproj", "{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.S3ImagesBuckets", "src\infrastructure\services\ArtForAll.Events.S3ImagesBuckets\ArtForAll.Events.S3ImagesBuckets.csproj", "{6C835B56-EB47-4532-AE5B-6237D1A84EA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{306FAFBC-1767-4C78-823C-524BB3CA3175}"
+	ProjectSection(SolutionItems) = preProject
+		OPENSSL.txt = OPENSSL.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.IntegrationTests", "tests\ArtForAll.Events.IntegrationTests\ArtForAll.Events.IntegrationTests.csproj", "{FE2746B3-C864-4836-8C4D-C718D7E71045}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99272145-CAAA-4DD3-9022-00FE5F0A1A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99272145-CAAA-4DD3-9022-00FE5F0A1A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99272145-CAAA-4DD3-9022-00FE5F0A1A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99272145-CAAA-4DD3-9022-00FE5F0A1A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2224CAB-A463-4B92-9F6F-D75855B7AD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2224CAB-A463-4B92-9F6F-D75855B7AD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2224CAB-A463-4B92-9F6F-D75855B7AD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2224CAB-A463-4B92-9F6F-D75855B7AD55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD47B4BE-279F-441D-9F96-689E51730D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD47B4BE-279F-441D-9F96-689E51730D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD47B4BE-279F-441D-9F96-689E51730D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD47B4BE-279F-441D-9F96-689E51730D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C835B56-EB47-4532-AE5B-6237D1A84EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C835B56-EB47-4532-AE5B-6237D1A84EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C835B56-EB47-4532-AE5B-6237D1A84EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C835B56-EB47-4532-AE5B-6237D1A84EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A939BFD4-8982-4D18-994F-081A31FB0B3B} = {3C89E3C9-4205-4F40-BF1B-E8C2C859C79B}
+		{90BD3615-1F19-4B0B-A812-3C2CCA11AA14} = {3C89E3C9-4205-4F40-BF1B-E8C2C859C79B}
+		{051FDECE-AB44-4AF6-BBE5-1E6EE49D3D9E} = {3C89E3C9-4205-4F40-BF1B-E8C2C859C79B}
+		{517B2016-E1FE-4E9F-8BDE-9246A26A1554} = {90BD3615-1F19-4B0B-A812-3C2CCA11AA14}
+		{094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97} = {90BD3615-1F19-4B0B-A812-3C2CCA11AA14}
+		{F17225BA-30EF-45FD-8064-1974D983D52F} = {A939BFD4-8982-4D18-994F-081A31FB0B3B}
+		{A9364AE4-E377-4E6A-9817-0831C9AA6C1C} = {A939BFD4-8982-4D18-994F-081A31FB0B3B}
+		{C1BDD149-8C13-4CD0-8D22-1C0258407E9E} = {A9364AE4-E377-4E6A-9817-0831C9AA6C1C}
+		{C941AB80-27E1-4D64-AFB9-A951CAE47AA7} = {A9364AE4-E377-4E6A-9817-0831C9AA6C1C}
+		{29EB2160-5B3C-44CC-A20A-D7E81FFF68BA} = {C1BDD149-8C13-4CD0-8D22-1C0258407E9E}
+		{F052420C-794B-4FCE-AE55-AA4CBAFBFAB3} = {517B2016-E1FE-4E9F-8BDE-9246A26A1554}
+		{23A2E281-25DB-4B2D-816A-C3FE6AFDA4AC} = {F17225BA-30EF-45FD-8064-1974D983D52F}
+		{99272145-CAAA-4DD3-9022-00FE5F0A1A02} = {051FDECE-AB44-4AF6-BBE5-1E6EE49D3D9E}
+		{D2224CAB-A463-4B92-9F6F-D75855B7AD55} = {D71A9E7D-7006-4A4B-A1B2-7BCFE5DAACEA}
+		{CD47B4BE-279F-441D-9F96-689E51730D5C} = {051FDECE-AB44-4AF6-BBE5-1E6EE49D3D9E}
+		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B} = {094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97}
+		{6C835B56-EB47-4532-AE5B-6237D1A84EA5} = {094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97}
+		{FE2746B3-C864-4836-8C4D-C718D7E71045} = {D71A9E7D-7006-4A4B-A1B2-7BCFE5DAACEA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B25373B1-05C6-4804-BA8A-E2F905CFD4B8}
+	EndGlobalSection
+EndGlobal

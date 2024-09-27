@@ -1,0 +1,20 @@
+How to Create your Own SSL Certificate signed by a Certificate Authority (CA) for Local HTTPS] https://devrix.com/tutorial/ssl-certificate-authority-local-https/
+1. openssl genrsa -des3 -out myCA.key 2048
+2. openssl req -x509 -new -nodes -key myCA.key -sha256 -days 1825 -out myCA.pem (Root certificate)
+	- abrir el mmc
+	- import el myCA.pem en Trusted Root Certification Authorities
+3. genrsa -out localhost.key 2048 (Private key)
+4. req -new -key localhost.key -out localhost.csr (Certificate Signing Request)
+5. Create a localhost.ext e incluir content (Verification extesion)
+	authorityKeyIdentifier=keyid,issuer
+	basicConstraints=CA:FALSE
+	keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+	subjectAltName = @alt_names
+
+	[alt_names]
+	DNS.1 = localhost
+5. x509 -req -in localhost.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out localhost.crt -days 825 -sha256 -extfile localhost.ext (Generate certificate)
+	- abrir el mmc
+	- import el localhost.crt en Personal
+6. openssl pkcs12 -export -out localhost.pfx -inkey localhost.key -in localhost.crt -certfile myCA.pem (create .pfx version)
+7. Import en IIS

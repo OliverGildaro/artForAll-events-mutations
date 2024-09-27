@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ArtForAll.Shared.ExceptionHandler" Version="1.0.0" />
+		<PackageReference Include="AWSSDK.S3" Version="3.7.101.57" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\core\domain\domainModel\ArtForAll.Events.Core.DomainModel\ArtForAll.Events.Core.DomainModel.csproj" />
+	</ItemGroup>
+
+</Project>
