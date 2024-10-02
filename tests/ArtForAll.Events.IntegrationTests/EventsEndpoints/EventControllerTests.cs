@@ -29,7 +29,7 @@ namespace ArtForAll.Events.IntegrationTests.EventsEndpoints
             {
                 Name = "NewName",
                 Description = "Description",
-                Date = DateTime.UtcNow.AddDays(1),
+                startDate = DateTime.UtcNow.AddDays(1),
                 type = "Music",
             };
         }
@@ -40,7 +40,7 @@ namespace ArtForAll.Events.IntegrationTests.EventsEndpoints
             {
                 { new StringContent(request.Name), nameof(TestEventInputModel.Name) },
                 { new StringContent(request.Description ?? string.Empty), nameof(TestEventInputModel.Description) },
-                { new StringContent(request.Date.ToString("o")), nameof(TestEventInputModel.Date) }, // "o" for ISO 8601 format
+                { new StringContent(request.startDate.ToString("o")), nameof(TestEventInputModel.startDate) }, // "o" for ISO 8601 format
                 { new StringContent(request.type), nameof(TestEventInputModel.type) }
             };
             return content;

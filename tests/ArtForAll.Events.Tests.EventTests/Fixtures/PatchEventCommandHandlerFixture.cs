@@ -25,8 +25,12 @@ namespace ArtForAll.Events.UnitTests.Fixtures
                             "Art event",
                             "Art event description",
                             DateTime.UtcNow.AddDays(1),
+                            DateTime.UtcNow.AddDays(2),
+                            100,
                             TypeEvent.CreateNew("Music").Value,
-                            StateEvent.DRAFT);
+                            StateEvent.DRAFT,
+                            Address.NoneAddress,
+                            Price.NonePrice);
                         return result;
                     }
                     else

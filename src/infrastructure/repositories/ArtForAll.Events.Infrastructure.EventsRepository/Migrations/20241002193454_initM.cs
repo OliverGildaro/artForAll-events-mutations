@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 {
     /// <inheritdoc />
-    public partial class intMigg : Migration
+    public partial class initM : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,11 +17,21 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    Date = table.Column<DateTime>(type: "dateTime", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "dateTime", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "dateTime", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "dateTime", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    State = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    Address_City = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Address_Country = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Address_Number = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Address_Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Address_ZipCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Price_CurrencyExchange = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
+                    Price_MonetaryValue = table.Column<float>(type: "real", maxLength: 10, nullable: false),
+                    State = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "dateTime", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "dateTime", nullable: false)
                 },
                 constraints: table =>
                 {

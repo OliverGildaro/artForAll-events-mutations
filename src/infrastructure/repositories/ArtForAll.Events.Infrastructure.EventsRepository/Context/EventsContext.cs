@@ -76,16 +76,23 @@ namespace OCP.PortalEvents.Repositories.Context
                     .IsRequired(false)
                     .HasMaxLength(1000);
 
-                x.Property(p => p.Date)
-                    .HasColumnName("Date")
+                x.Property(p => p.StartDate)
+                    .HasColumnType("dateTime")
+                    .IsRequired();
+
+
+                x.Property(p => p.EndDate)
                     .HasColumnType("dateTime")
                     .IsRequired();
 
                 x.Property(p => p.CreatedAt)
-                    .HasColumnName("CreatedAt")
                     .HasColumnType("dateTime")
                     .IsRequired();
 
+
+                x.Property(p => p.UpdatedAt)
+                    .HasColumnType("dateTime")
+                    .IsRequired();
 
                 x.Property(p => p.Type)
                     .HasMaxLength(30)
@@ -98,6 +105,43 @@ namespace OCP.PortalEvents.Repositories.Context
                     .IsUnicode()
                     .IsRequired()
                     .HasConversion(p => p.Value, p => StateEvent.CreateNew(p).Value);
+
+                x.Property(p => p.Capacity)
+                    .IsRequired();
+
+                x.OwnsOne(p => p.Address, p =>
+                {
+                    p.Property(pp => pp.Country)
+                        .HasMaxLength(30)
+                        .IsRequired();
+
+                    p.Property(pp => pp.City)
+                        .HasMaxLength(30)
+                        .IsRequired();
+
+                    p.Property(pp => pp.Street)
+                        .HasMaxLength(100)
+                        .IsRequired();
+
+                    p.Property(pp => pp.Number)
+                        .HasMaxLength(10)
+                        .IsRequired();
+
+                    p.Property(pp => pp.ZipCode)
+                        .HasMaxLength(10)
+                        .IsRequired();
+                });
+
+                x.OwnsOne(p => p.Price, p =>
+                {
+                    p.Property(pp => pp.CurrencyExchange)
+                        .HasMaxLength(5)
+                        .IsRequired();
+
+                    p.Property(pp => pp.MonetaryValue)
+                        .HasMaxLength(10)
+                        .IsRequired();
+                });
 
                 // Define the one-to-one relationship with Image
                 x.HasOne(p => p.Image)
@@ -139,10 +183,14 @@ namespace OCP.PortalEvents.Repositories.Context
                 .ToList();
 
             int result = await base.SaveChangesAsync();
+            if (result < 1)
+            {
+                return Result.Failure("");
+            }
 
             foreach (AggregateRoot entity in entities)
             {
-                if (entity.DomainEvents != null)
+                if (entity.DomainEvents != null && entity.DomainEvents.Count() != 0)
                 {
                     await this.PublishDomainEvents(entity.DomainEvents);
                 }

@@ -2,7 +2,7 @@ namespace ArtForAll.Events.Core.Commanding.Events.PatchEvent
 {
     using ArtForAll.Core.DomainModel.ValueObjects;
     using ArtForAll.Events.Core.Commanding.decorators.Auditing;
-    using ArtForAll.Events.Core.DomainModel.Events;
+    using ArtForAll.Events.Core.DomainModel.ValueObjects;
     using ArtForAll.Events.Presentation.DTOs.Events;
     using ArtForAll.Events.S3ImagesBuckets.Interfaces;
     using ArtForAll.Infrastructure.EFRepositories.Interfaces;
@@ -34,18 +34,27 @@ namespace ArtForAll.Events.Core.Commanding.Events.PatchEvent
             var eventRequest = new EventPatchRequest{
                 Name = @event.Name,
                 Description = @event.Description,
-                date = @event.Date,
-                Type = @event.Type
+                StartDate = @event.StartDate,
+                EndDate = @event.EndDate,
+                Type = @event.Type,
+                Address = new AddressRequest{
+                    City = @event.Address.City,
+                    Country = @event.Address.Country,
+                    Number = @event.Address.Number,
+                    Street = @event.Address.Street,
+                    ZipCode = @event.Address.ZipCode    
+                },
+                Capacity = @event.Capacity,
+                Price = new PriceRequest
+                {
+                    CurrencyExchange = @event.Price.CurrencyExchange,
+                    MonetaryValue = @event.Price.MonetaryValue
+                },
             };
 
             command.PatchDocument.ApplyTo(eventRequest);
 
-            Result<TypeEvent, Error> typeResult = TypeEvent.CreateNew(eventRequest.Type);
 
-            if (typeResult.IsFailure)
-            {
-                return Result.Failure(eventResult.Error.Message);
-            }
 
             List<EventPatchOperation> patchOperations = command.PatchDocument.Operations.Select(op => new EventPatchOperation
             {
@@ -53,11 +62,25 @@ namespace ArtForAll.Events.Core.Commanding.Events.PatchEvent
                 Op = op.op,
                 Value = op.value
             }).ToList();
+            Result<TypeEvent, Error> typeResult = TypeEvent.CreateNew(eventRequest.Type);
+            if (typeResult.IsFailure)
+            {
+                return Result.Failure(eventResult.Error.Message);
+            }
+            var (City, Country, Street, Number, ZipCode) = eventRequest.Address;
+            var addressResult = Address.CreateNew(City, Country, Street, Number, ZipCode);
 
-            Result @eventUpdatedResult = @event.Update(eventRequest.Name,
+            var priceResult = Price.CreateNew(eventRequest.Price.CurrencyExchange, eventRequest.Price.MonetaryValue);
+
+            Result @eventUpdatedResult = @event.Update(
+                eventRequest.Name,
                 eventRequest.Description,
-                eventRequest.date,
-                typeResult.Value, patchOperations);
+                eventRequest.StartDate,
+                eventRequest.EndDate,
+                typeResult.Value,
+                addressResult.Value,
+                priceResult.Value,
+                patchOperations);
 
             if (@eventUpdatedResult.IsFailure)
             {

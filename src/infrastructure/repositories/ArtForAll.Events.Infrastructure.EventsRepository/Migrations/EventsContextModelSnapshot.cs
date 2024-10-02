@@ -31,24 +31,28 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("dateTime")
-                        .HasColumnName("CreatedAt");
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("dateTime")
-                        .HasColumnName("Date");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("dateTime");
 
                     b.Property<string>("Description")
                         .HasMaxLength(1000)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("dateTime");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("dateTime");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -61,6 +65,9 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                         .HasMaxLength(30)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("dateTime");
 
                     b.HasKey("Id");
 
@@ -94,6 +101,75 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                         .IsUnique();
 
                     b.ToTable("Images", (string)null);
+                });
+
+            modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Event", b =>
+                {
+                    b.OwnsOne("ArtForAll.Events.Core.DomainModel.ValueObjects.Address", "Address", b1 =>
+                        {
+                            b1.Property<string>("EventId")
+                                .HasColumnType("nvarchar(36)");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("Number")
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<string>("ZipCode")
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.HasKey("EventId");
+
+                            b1.ToTable("Events");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EventId");
+                        });
+
+                    b.OwnsOne("ArtForAll.Events.Core.DomainModel.ValueObjects.Price", "Price", b1 =>
+                        {
+                            b1.Property<string>("EventId")
+                                .HasColumnType("nvarchar(36)");
+
+                            b1.Property<string>("CurrencyExchange")
+                                .IsRequired()
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)");
+
+                            b1.Property<float>("MonetaryValue")
+                                .HasMaxLength(10)
+                                .HasColumnType("real");
+
+                            b1.HasKey("EventId");
+
+                            b1.ToTable("Events");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EventId");
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
+
+                    b.Navigation("Price")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Image", b =>

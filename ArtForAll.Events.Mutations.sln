@@ -50,6 +50,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.S3ImagesBu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{306FAFBC-1767-4C78-823C-524BB3CA3175}"
 	ProjectSection(SolutionItems) = preProject
+		AwsTutos.txt = AwsTutos.txt
 		OPENSSL.txt = OPENSSL.txt
 	EndProjectSection
 EndProject

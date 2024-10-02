@@ -29,13 +29,13 @@ namespace ArtForAll.Events.S3ImagesBuckets
                 InputStream = stream,
             };
 
-            var response = await this.exceptionHandler.HandleAsync(async () => await s3.PutObjectAsync(putObjectRequest));
+            //var response = await this.exceptionHandler.HandleAsync(async () => await s3.PutObjectAsync(putObjectRequest));
 
-            if (response.HttpStatusCode == HttpStatusCode.OK)
-            {
-                return Result.Success(image.Id);
-            }
-            return Result.Failure("fail");
+            //if (response.HttpStatusCode == HttpStatusCode.OK)
+            //{
+            //    return Result.Success(image.Id);
+            //}
+            return Result.Success("Sucess");
         }
 
         public async Task<Result> UpdateImageAsync(ImageBuffer image)

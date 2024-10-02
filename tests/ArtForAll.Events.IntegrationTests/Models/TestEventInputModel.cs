@@ -4,7 +4,7 @@ namespace ArtForAll.Events.IntegrationTests.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime startDate { get; set; }
         public string type { get; set; }
         public IFormFile Image { get; set; }
 

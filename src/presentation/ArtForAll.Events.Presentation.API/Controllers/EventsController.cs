@@ -27,14 +27,18 @@ namespace ArtForAll.Presentation.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
-        public async Task<IActionResult> CreatePitch([FromBody] EventCreateRequest request)
+        public async Task<IActionResult> CreateEvent([FromBody] EventCreateRequest request)
         {
             var command = new CreateEventCommand
             {
                 Name = request.Name,
                 Description = request.Description,
-                date = request.Date,
+                StartDate = request.StartDate,
+                EndDate = request.StartDate,
                 Type = request.Type,
+                Price = request.Price,
+                Address = request.Address,
+                Capacity = request.Capacity,
             };
 
             try

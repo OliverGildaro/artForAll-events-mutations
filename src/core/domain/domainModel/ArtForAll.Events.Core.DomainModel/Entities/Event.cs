@@ -12,37 +12,69 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
     {
         private string name;
         private string description;
-        private StateEvent state;
-        private DateTime date;
+        private int capacity;
+        private DateTime startDate;
+        private DateTime endDate;
         private TypeEvent type;
+        private Address address;
         private Image image;
+        private StateEvent state;
+        private Price price;
+
         private DateTime createdAt;
+        private DateTime updatedAt;
 
         protected Event() { }
 
-        private Event(string name, string description, DateTime date, TypeEvent type, StateEvent state)
+        private Event(string name,
+            string description,
+            DateTime startDate,
+            DateTime endDate,
+            int capacity,
+            TypeEvent type,
+            StateEvent state,
+            Address address,
+            Price price)
         {
             name = name ?? throw new ArgumentNullException(nameof(type), "Parameter cannot be null");
             type = type ?? throw new ArgumentNullException(nameof(type), "Parameter cannot be null");
 
             this.name = name;
             this.description = description;
-            this.date = date;
+            this.startDate = startDate;
+            this.endDate = endDate;
             this.createdAt = DateTime.UtcNow;
+            this.updatedAt = DateTime.UtcNow;
+            this.capacity = capacity;
             this.type = type;
             base.Id = Guid.NewGuid().ToString();
             this.state = state;
+            this.address = address;
+            this.price = price;
         }
 
         public string Name => name;
+        public int Capacity => capacity;
         public string Description => description;
-        public DateTime Date => date;
-        public DateTime CreatedAt => createdAt;
+        public DateTime StartDate => startDate;
+        public DateTime EndDate => endDate;
         public TypeEvent Type => type;
+        public Address Address => address;
+        public Price Price => price;
         public StateEvent State => this.state;
         public virtual Image Image => this.image;
+        public DateTime CreatedAt => createdAt;
+        public DateTime UpdatedAt => updatedAt;
 
-        public static Result<Event, Error> CreateNew(string name, string description, DateTime date, TypeEvent type, StateEvent state)
+        public static Result<Event, Error> CreateNew(string name,
+            string description,
+            DateTime startDate,
+            DateTime endDate,
+            int capacity,
+            TypeEvent type,
+            StateEvent state,
+            Address address,
+            Price price)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -59,7 +91,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
                 return new Error("", "");
             }
 
-            if (date.ToUniversalTime() < DateTime.UtcNow)
+            if (startDate.ToUniversalTime() < DateTime.UtcNow)
             {
                 return new Error("", "");
             }
@@ -75,10 +107,17 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             }
 
 
-            return new Event(name, description, date, type, state);
+            return new Event(name, description, startDate, endDate, capacity, type, state, address, price);
         }
 
-        public Result Update(string name, string? description, DateTime date, TypeEvent type, List<EventPatchOperation> patchOperations)
+        public Result Update(string name,
+            string? description,
+            DateTime startDate,
+            DateTime endDate,
+            TypeEvent type,
+            Address address,
+            Price price,
+            List<EventPatchOperation> patchOperations)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -95,7 +134,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
                 return Result.Failure("");
             }
 
-            if (date.ToUniversalTime() < DateTime.UtcNow)
+            if (startDate.ToUniversalTime() < DateTime.UtcNow)
             {
                 return Result.Failure("");
             }
@@ -103,8 +142,11 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             AddEventPatchedDomainEvent(patchOperations);
             this.name = name.Trim();
             this.description = description;
-            this.date = date;
+            this.startDate = startDate;
+            this.endDate = endDate;
             this.type = type;
+            this.address = address;
+            this.price = price;
 
             return Result.Success();
         }
@@ -118,7 +160,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             var imageAdded = new ImageAdded
             {
                 Id = image.Id,
-                CreatedAt = this.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
                 EventId = this.Id,
                 contentType = image.ContentType,
                 fileName = image.FileName
@@ -142,7 +184,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             var eventPublished = new EventPublished
             {
                 Id = this.Id,
-                CreatedAt = this.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
                 StateEvent = this.state
             };
             this.AddDomainEvent(eventPublished);
@@ -162,7 +204,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             var eventDeleted = new EventDeleted
             {
                 Id = this.Id,
-                CreatedAt = this.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
                 StateEvent = this.state
             };
             this.AddDomainEvent(eventDeleted);
@@ -179,7 +221,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             var eventPatched = new EventPatched
             {
                 Id = this.Id,
-                CreatedAt = this.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
                 PatchOperations = patchOperations
             };
 
@@ -194,7 +236,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
                 allowAddImage = false;
             }
 
-            if (this.Date <= DateTime.UtcNow)
+            if (this.StartDate <= DateTime.UtcNow)
             {
                 allowAddImage = false;
             }

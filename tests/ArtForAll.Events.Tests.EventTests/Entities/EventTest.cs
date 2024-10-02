@@ -6,6 +6,9 @@ namespace ArtForAll.Events.UnitTests
     using ArtForAll.Events.Core.DomainModel.ValueObjects;
     using ArtForAll.Shared.Contracts.DDD;
     using ArtForAll.Shared.ErrorHandler;
+    using System.Diagnostics.Metrics;
+    using System.IO;
+    using System.Reflection.Emit;
     using static System.Runtime.InteropServices.JavaScript.JSType;
 
     public class EventTest
@@ -23,8 +26,40 @@ namespace ArtForAll.Events.UnitTests
         {
             return new List<object[]>
             {
-                new object[] { "DDD event", "A DDD event to participate", DateTime.UtcNow.AddDays(1), "Poetry", "DRAFT" },
-                new object[] { "DDD eveneent", "Description event2", DateTime.UtcNow.AddDays(2), "Music", "DRAFT" },
+                new object[]
+                {
+                    "DDD event",
+                    "A DDD event to participate",
+                    DateTime.UtcNow.AddDays(1),
+                    DateTime.UtcNow.AddDays(2),
+                    "Poetry",
+                    "DRAFT" ,
+                    "Cochabamba",
+                    "Bolivia",
+                    "Bartolome",
+                    "045",
+                    "0000",
+                    100,
+                    "$",
+                    14.55f
+                },
+                new object[] 
+                {
+                    "DDD eveneent", 
+                    "Description event2",
+                    DateTime.UtcNow.AddDays(2), 
+                    DateTime.UtcNow.AddDays(3), 
+                    "Music",
+                    "DRAFT",
+                    "Cochabamba",
+                    "Bolivia",
+                    "Bartolome",
+                    "045",
+                    "0000",
+                    1000,
+                    "$",
+                    14.55f
+                },
             };
         }
 
@@ -33,14 +68,33 @@ namespace ArtForAll.Events.UnitTests
         public void WhenCreateANewEvent_ThenItShouldReturANewInstance(
             string name,
             string description,
-            DateTime date,
+            DateTime startDate,
+            DateTime endDate,
             string type,
-            string state)
+            string state,
+            string city,
+            string country,
+            string street,
+            string number,
+            string zipCode,
+            int capacity,
+            string CurrencyExchange,
+            float monetaryValue)
         {
-            var @event = CreateEvent(name, description, date, type, state);
+            var @event = CreateEvent(name,
+                description,
+                startDate,
+                endDate,
+                type, state,
+                city, country, 
+                street, number,
+                zipCode, capacity, 
+                CurrencyExchange, 
+                monetaryValue);
+
             Assert.Equal(name, @event.Name);
             Assert.Equal(description, @event.Description);
-            Assert.Equal(date, @event.Date);
+            Assert.Equal(startDate, @event.StartDate);
             Assert.Equal(type, @event.Type);
             Assert.Equal(StateEvent.DRAFT, @event.State);
             Assert.Contains("DDD", @event.Name);
@@ -48,8 +102,8 @@ namespace ArtForAll.Events.UnitTests
             Assert.StartsWith("DDD", @event.Name);
             Assert.EndsWith("ent", @event.Name);
             Assert.Matches("DD(D|E) eve(n|t|k)", @event.Name);
-            Assert.True(@event.Date > DateTime.UtcNow.AddDays(0), "Date can not be before than the current date");
-            Assert.InRange(@event.Date, DateTime.UtcNow, DateTime.UtcNow.AddYears(100));
+            Assert.True(@event.StartDate > DateTime.UtcNow.AddDays(0), "startDate can not be before than the current startDate");
+            Assert.InRange(@event.StartDate, DateTime.UtcNow, DateTime.UtcNow.AddYears(100));
             Assert.IsType<Event>(@event);
             Assert.IsAssignableFrom<AggregateRoot>(@event);
             Assert.IsAssignableFrom<Entity>(@event);
@@ -60,13 +114,31 @@ namespace ArtForAll.Events.UnitTests
         public void WhenPublishAnEvent_ThenItShouldReturANewInstance(
             string name,
             string description,
-            DateTime date,
+            DateTime startDate,
+            DateTime endDate,
             string type,
-            string state)
+            string state,
+                        string city,
+            string country,
+            string street,
+            string number,
+            string zipCode,
+            int capacity,
+            string CurrencyExchange,
+            float monetaryValue)
         {
-            var @event = CreateEvent(name, description, date, type, state);
-            var result = @event.Publish();
+            var @event = CreateEvent(name,
+                description,
+                startDate,
+                endDate,
+                type, state,
+                city, country,
+                street, number,
+                zipCode, capacity,
+                CurrencyExchange,
+                monetaryValue);
 
+            var result = @event.Publish();
             Assert.True(result.IsSucces);
             Assert.Equal(StateEvent.PUBLISHED, @event.State);
         }
@@ -76,11 +148,29 @@ namespace ArtForAll.Events.UnitTests
         public void WhenPublishAPublishedEvent_ThenItShouldReturAFailureResult(
             string name,
             string description,
-            DateTime date,
+            DateTime startDate,
+            DateTime endDate,
             string type,
-            string state)
-        {
-            var @event = CreateEvent(name, description, date, type, state);
+            string state, string city,
+            string country,
+            string street,
+            string number,
+            string zipCode,
+            int capacity,
+            string CurrencyExchange,
+            float monetaryValue)
+        { 
+            var @event = CreateEvent(name,
+                description,
+                startDate,
+                endDate,
+                type, state,
+                city, country,
+                street, number,
+                zipCode, capacity,
+                CurrencyExchange,
+                monetaryValue);
+
             var result = @event.Publish();
             var resultRepublished = @event.Publish();
             Assert.True(resultRepublished.IsFailure);
@@ -91,21 +181,57 @@ namespace ArtForAll.Events.UnitTests
         public void WhenDeleteAnEvent_ThenItShouldReturASuccessResult(
             string name,
             string description,
-            DateTime date,
+            DateTime startDate,
+            DateTime endDate,
             string type,
-            string state)
+            string state, string city,
+            string country,
+            string street,
+            string number,
+            string zipCode,
+            int capacity,
+            string CurrencyExchange,
+            float monetaryValue)
         {
-            var @event = CreateEvent(name, description, date, type, state);
+            var @event = CreateEvent(name,
+                description,
+                startDate,
+                endDate,
+                type, state,
+                city, country,
+                street, number,
+                zipCode, capacity,
+                CurrencyExchange,
+                monetaryValue);
+
             Result res = @event.Delete();
             Assert.True(res.IsSucces);
             Assert.Equal(StateEvent.DELETED, @event.State);
         }
 
-        private Event CreateEvent(string name, string description, DateTime date, string type, string state)
+        private Event CreateEvent(string name, string description, DateTime startDate, DateTime endDate, string type, string state, string city,
+            string country,
+            string street,
+            string number,
+            string zipCode,
+            int capacity,
+            string CurrencyExchange,
+            float monetaryValue)
         {
             var typeResult = TypeEvent.CreateNew(type);
             var stateResult = StateEvent.CreateNew(state);
-            var @eventResult = Event.CreateNew(name, description, date, typeResult.Value, stateResult.Value);
+            var addressResult = Address.CreateNew(city, country, street, number, zipCode);
+            var priceResult = Price.CreateNew(CurrencyExchange, monetaryValue);
+            var @eventResult = Event.CreateNew(
+                name,
+                description,
+                startDate,
+                endDate,
+                capacity,
+                typeResult.Value, 
+                stateResult.Value, 
+                addressResult.Value, 
+                priceResult.Value);
             return @eventResult.Value;
         }
     }
