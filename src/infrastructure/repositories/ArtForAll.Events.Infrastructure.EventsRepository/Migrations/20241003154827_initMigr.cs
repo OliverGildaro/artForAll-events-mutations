@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 {
     /// <inheritdoc />
-    public partial class initM : Migration
+    public partial class initMigr : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,18 +17,18 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Capacity = table.Column<int>(type: "int", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
                     StartDate = table.Column<DateTime>(type: "dateTime", nullable: false),
                     EndDate = table.Column<DateTime>(type: "dateTime", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Address_City = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Address_Country = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Address_Number = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Address_Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Address_ZipCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Price_CurrencyExchange = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
-                    Price_MonetaryValue = table.Column<float>(type: "real", maxLength: 10, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Number = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    CurrencyExchange = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
+                    MonetaryValue = table.Column<float>(type: "real", nullable: true),
                     State = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "dateTime", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "dateTime", nullable: false)
@@ -36,6 +36,10 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Events", x => x.Id);
+                    table.CheckConstraint("CK_Event_Capacity_Positive", "[Capacity] IS NULL OR [Capacity] >= 0");
+                    table.CheckConstraint("CK_Event_EndDate_AfterStart", "[EndDate] >= [StartDate]");
+                    table.CheckConstraint("CK_Event_StartDate_Now", "[StartDate] >= GETDATE()");
+                    table.CheckConstraint("CK_Price_MonetaryValue_Positive", "[MonetaryValue] IS NULL OR [MonetaryValue] >= 0");
                 });
 
             migrationBuilder.CreateTable(

@@ -12,7 +12,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
     {
         private string name;
         private string description;
-        private int capacity;
+        private int?  capacity;
         private DateTime startDate;
         private DateTime endDate;
         private TypeEvent type;
@@ -30,7 +30,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             string description,
             DateTime startDate,
             DateTime endDate,
-            int capacity,
+            int?  capacity,
             TypeEvent type,
             StateEvent state,
             Address address,
@@ -54,7 +54,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
         }
 
         public string Name => name;
-        public int Capacity => capacity;
+        public int?  Capacity => capacity;
         public string Description => description;
         public DateTime StartDate => startDate;
         public DateTime EndDate => endDate;
@@ -70,7 +70,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             string description,
             DateTime startDate,
             DateTime endDate,
-            int capacity,
+            int? capacity,
             TypeEvent type,
             StateEvent state,
             Address address,

@@ -9,17 +9,17 @@ namespace ArtForAll.Events.Core.DomainModel.ValueObjects
     {
         public static Price NonePrice { get; private set; } = new Price("$", 0);
         public string CurrencyExchange { get; private set; }
-        public float MonetaryValue { get; private set; }
+        public float? MonetaryValue { get; private set; }
 
         protected Price() {}
 
-        private Price(string currencyExchange, float monetaryValue)
+        private Price(string currencyExchange, float? monetaryValue)
         {
             this.CurrencyExchange = currencyExchange;
             this.MonetaryValue = monetaryValue;
         }
 
-        public static Result<Price, Error> CreateNew(string currencyExchange, float monetaryValue)
+        public static Result<Price, Error> CreateNew(string currencyExchange, float? monetaryValue)
         {
             if (string.IsNullOrEmpty(currencyExchange))
             {

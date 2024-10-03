@@ -62,6 +62,7 @@ namespace OCP.PortalEvents.Repositories.Context
                 x.ToTable("Events")
                     .HasKey(p => p.Id);
 
+
                 x.Property(p => p.Id)
                     .HasMaxLength(36)
                     .IsRequired();
@@ -107,46 +108,55 @@ namespace OCP.PortalEvents.Repositories.Context
                     .HasConversion(p => p.Value, p => StateEvent.CreateNew(p).Value);
 
                 x.Property(p => p.Capacity)
-                    .IsRequired();
+                    .IsRequired(false);
 
                 x.OwnsOne(p => p.Address, p =>
                 {
                     p.Property(pp => pp.Country)
+                        .HasColumnName("Country")
                         .HasMaxLength(30)
                         .IsRequired();
 
                     p.Property(pp => pp.City)
+                        .HasColumnName("City")
                         .HasMaxLength(30)
                         .IsRequired();
 
                     p.Property(pp => pp.Street)
+                    .HasColumnName("Street")
                         .HasMaxLength(100)
                         .IsRequired();
 
                     p.Property(pp => pp.Number)
+                    .HasColumnName("Number")
                         .HasMaxLength(10)
                         .IsRequired();
 
                     p.Property(pp => pp.ZipCode)
+                    .HasColumnName("ZipCode")
                         .HasMaxLength(10)
                         .IsRequired();
                 });
 
                 x.OwnsOne(p => p.Price, p =>
                 {
-                    p.Property(pp => pp.CurrencyExchange)
+                    p.Property(pp => pp.CurrencyExchange).HasColumnName("CurrencyExchange")
                         .HasMaxLength(5)
-                        .IsRequired();
+                        .IsRequired(false);
 
                     p.Property(pp => pp.MonetaryValue)
-                        .HasMaxLength(10)
-                        .IsRequired();
+                    .HasColumnName("MonetaryValue")
+                        .IsRequired(false);
                 });
 
-                // Define the one-to-one relationship with Image
                 x.HasOne(p => p.Image)
                     .WithOne()
                     .HasForeignKey<Image>(p => p.EventId);
+
+                x.ToTable(t => t.HasCheckConstraint("CK_Event_Capacity_Positive", "[Capacity] IS NULL OR [Capacity] >= 0"));
+                x.ToTable(t => t.HasCheckConstraint("CK_Price_MonetaryValue_Positive", "[MonetaryValue] IS NULL OR [MonetaryValue] >= 0"));
+                x.ToTable(t => t.HasCheckConstraint("CK_Event_StartDate_Now", "[StartDate] >= GETDATE()"));
+                x.ToTable(t => t.HasCheckConstraint("CK_Event_EndDate_AfterStart", "[EndDate] >= [StartDate]"));
             });
 
             modelBuilder.Entity<Image>(x =>
@@ -182,10 +192,18 @@ namespace OCP.PortalEvents.Repositories.Context
                 .Select(x => (Entity)x.Entity)
                 .ToList();
 
-            int result = await base.SaveChangesAsync();
-            if (result < 1)
+            try
             {
-                return Result.Failure("");
+                int? result = await base.SaveChangesAsync();
+                if (result < 1)
+                {
+                    return Result.Failure("");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
 
             foreach (AggregateRoot entity in entities)

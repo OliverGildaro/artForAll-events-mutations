@@ -23,7 +23,7 @@ namespace ArtForAll.Events.Presentation.API.Utils
             output.WriteLine(json);
         }
 
-        private string WrapMessage(string message, int maxLineLength)
+        private string WrapMessage(string message, int? maxLineLength)
         {
             if (string.IsNullOrEmpty(message))
             {
@@ -36,7 +36,7 @@ namespace ArtForAll.Events.Presentation.API.Utils
             foreach (var line in lines)
             {
                 var words = line.Split(' ');
-                int currentLineLength = 0;
+                int? currentLineLength = 0;
 
                 foreach (var word in words)
                 {

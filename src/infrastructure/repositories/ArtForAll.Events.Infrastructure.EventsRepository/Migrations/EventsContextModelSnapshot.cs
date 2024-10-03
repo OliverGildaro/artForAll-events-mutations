@@ -31,7 +31,7 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
 
-                    b.Property<int>("Capacity")
+                    b.Property<int?>("Capacity")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -71,7 +71,16 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_Event_Capacity_Positive", "[Capacity] IS NULL OR [Capacity] >= 0");
+
+                            t.HasCheckConstraint("CK_Event_EndDate_AfterStart", "[EndDate] >= [StartDate]");
+
+                            t.HasCheckConstraint("CK_Event_StartDate_Now", "[StartDate] >= GETDATE()");
+
+                            t.HasCheckConstraint("CK_Price_MonetaryValue_Positive", "[MonetaryValue] IS NULL OR [MonetaryValue] >= 0");
+                        });
                 });
 
             modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Image", b =>
@@ -113,27 +122,32 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                             b1.Property<string>("City")
                                 .IsRequired()
                                 .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
+                                .HasColumnType("nvarchar(30)")
+                                .HasColumnName("City");
 
                             b1.Property<string>("Country")
                                 .IsRequired()
                                 .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
+                                .HasColumnType("nvarchar(30)")
+                                .HasColumnName("Country");
 
                             b1.Property<string>("Number")
                                 .IsRequired()
                                 .HasMaxLength(10)
-                                .HasColumnType("nvarchar(10)");
+                                .HasColumnType("nvarchar(10)")
+                                .HasColumnName("Number");
 
                             b1.Property<string>("Street")
                                 .IsRequired()
                                 .HasMaxLength(100)
-                                .HasColumnType("nvarchar(100)");
+                                .HasColumnType("nvarchar(100)")
+                                .HasColumnName("Street");
 
                             b1.Property<string>("ZipCode")
                                 .IsRequired()
                                 .HasMaxLength(10)
-                                .HasColumnType("nvarchar(10)");
+                                .HasColumnType("nvarchar(10)")
+                                .HasColumnName("ZipCode");
 
                             b1.HasKey("EventId");
 
@@ -149,13 +163,13 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                                 .HasColumnType("nvarchar(36)");
 
                             b1.Property<string>("CurrencyExchange")
-                                .IsRequired()
                                 .HasMaxLength(5)
-                                .HasColumnType("nvarchar(5)");
+                                .HasColumnType("nvarchar(5)")
+                                .HasColumnName("CurrencyExchange");
 
-                            b1.Property<float>("MonetaryValue")
-                                .HasMaxLength(10)
-                                .HasColumnType("real");
+                            b1.Property<float?>("MonetaryValue")
+                                .HasColumnType("real")
+                                .HasColumnName("MonetaryValue");
 
                             b1.HasKey("EventId");
 

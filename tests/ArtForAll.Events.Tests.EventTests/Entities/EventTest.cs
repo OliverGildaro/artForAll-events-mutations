@@ -77,9 +77,9 @@ namespace ArtForAll.Events.UnitTests
             string street,
             string number,
             string zipCode,
-            int capacity,
+            int? capacity,
             string CurrencyExchange,
-            float monetaryValue)
+            float? monetaryValue)
         {
             var @event = CreateEvent(name,
                 description,
@@ -123,9 +123,9 @@ namespace ArtForAll.Events.UnitTests
             string street,
             string number,
             string zipCode,
-            int capacity,
+            int? capacity,
             string CurrencyExchange,
-            float monetaryValue)
+            float? monetaryValue)
         {
             var @event = CreateEvent(name,
                 description,
@@ -156,9 +156,9 @@ namespace ArtForAll.Events.UnitTests
             string street,
             string number,
             string zipCode,
-            int capacity,
+            int? capacity,
             string CurrencyExchange,
-            float monetaryValue)
+            float? monetaryValue)
         { 
             var @event = CreateEvent(name,
                 description,
@@ -189,9 +189,9 @@ namespace ArtForAll.Events.UnitTests
             string street,
             string number,
             string zipCode,
-            int capacity,
+            int? capacity,
             string CurrencyExchange,
-            float monetaryValue)
+            float? monetaryValue)
         {
             var @event = CreateEvent(name,
                 description,
@@ -214,9 +214,9 @@ namespace ArtForAll.Events.UnitTests
             string street,
             string number,
             string zipCode,
-            int capacity,
+            int? capacity,
             string CurrencyExchange,
-            float monetaryValue)
+            float? monetaryValue)
         {
             var typeResult = TypeEvent.CreateNew(type);
             var stateResult = StateEvent.CreateNew(state);
