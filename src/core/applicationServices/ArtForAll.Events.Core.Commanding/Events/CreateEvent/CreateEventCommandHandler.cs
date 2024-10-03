@@ -70,7 +70,7 @@ namespace ArtForAll.Core.Commanding.Events.CreateEvent
             {
                 Id = eventCreated.Id,
                 StartDate = eventCreated.StartDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
-                EndDate = eventCreated.StartDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
+                EndDate = eventCreated.EndDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
                 CreatedAt = eventCreated.CreatedAt.ToString("yyyy-MM-dd"),
                 Description = eventCreated.Description,
                 Name = eventCreated.Name,

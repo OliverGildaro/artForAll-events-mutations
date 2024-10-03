@@ -34,7 +34,7 @@ namespace ArtForAll.Presentation.API.Controllers
                 Name = request.Name,
                 Description = request.Description,
                 StartDate = request.StartDate,
-                EndDate = request.StartDate,
+                EndDate = request.EndDate,
                 Type = request.Type,
                 Price = request.Price,
                 Address = request.Address,
