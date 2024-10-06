@@ -8,6 +8,7 @@ namespace ArtForAll.Core.Commanding.Events.CreateEvent
     using ArtForAll.Events.S3ImagesBuckets.Interfaces;
     using ArtForAll.Infrastructure.EFRepositories.Interfaces;
     using ArtForAll.Shared.Contracts.CQRS;
+    using ArtForAll.Shared.Contracts.DDD;
     using ArtForAll.Shared.ErrorHandler;
 
     [AuditLog]
@@ -42,7 +43,16 @@ namespace ArtForAll.Core.Commanding.Events.CreateEvent
             {
             }
 
-            var priceResult = Price.CreateNew(command.Price.CurrencyExchange, command.Price.MonetaryValue);
+            Result<Price, Error> priceResult;
+            if (command.Price is null)
+            {
+                priceResult = Result<Price, Error>.Success(Price.NonePrice);
+            }
+            else
+            {
+                priceResult = Price.CreateNew(command.Price.CurrencyExchange, command.Price.MonetaryValue);
+            }
+
             if (priceResult.IsFailure)
             {
             }

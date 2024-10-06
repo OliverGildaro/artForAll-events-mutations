@@ -7,13 +7,13 @@ namespace ArtForAll.Events.Core.DomainModel.ValueObjects
 
     public class Price : ValueObject
     {
-        public static Price NonePrice { get; private set; } = new Price("$", 0);
-        public string CurrencyExchange { get; private set; }
+        public static Price NonePrice { get; private set; } = new Price(null, null);
+        public string? CurrencyExchange { get; private set; }
         public float? MonetaryValue { get; private set; }
 
         protected Price() {}
 
-        private Price(string currencyExchange, float? monetaryValue)
+        private Price(string? currencyExchange, float? monetaryValue)
         {
             this.CurrencyExchange = currencyExchange;
             this.MonetaryValue = monetaryValue;

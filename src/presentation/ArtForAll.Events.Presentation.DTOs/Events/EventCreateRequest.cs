@@ -12,6 +12,6 @@ namespace ArtForAll.Events.Presentation.DTOs.Events
         public string Type { get; set; }
         public AddressRequest Address { get; set; }
         public int? Capacity { get; set; }
-        public PriceRequest Price { get; set; }
+        public PriceRequest? Price { get; set; }
     }
 }

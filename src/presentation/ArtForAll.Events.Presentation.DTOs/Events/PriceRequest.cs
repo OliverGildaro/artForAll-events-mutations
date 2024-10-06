@@ -2,7 +2,7 @@
 {
     public class PriceRequest
     {
-        public string CurrencyExchange { get;  set; }
+        public string? CurrencyExchange { get;  set; }
         public float? MonetaryValue { get;  set; }
     }
 }
