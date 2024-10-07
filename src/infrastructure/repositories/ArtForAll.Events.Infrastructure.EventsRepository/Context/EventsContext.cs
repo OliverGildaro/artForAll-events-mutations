@@ -192,18 +192,10 @@ namespace OCP.PortalEvents.Repositories.Context
                 .Select(x => (Entity)x.Entity)
                 .ToList();
 
-            try
+            int? result = await base.SaveChangesAsync();
+            if (result < 1)
             {
-                int? result = await base.SaveChangesAsync();
-                if (result < 1)
-                {
-                    return Result.Failure("");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw;
+                return Result.Failure("");
             }
 
             foreach (AggregateRoot entity in entities)

@@ -56,6 +56,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{306FAFBC-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtForAll.Events.IntegrationTests", "tests\ArtForAll.Events.IntegrationTests\ArtForAll.Events.IntegrationTests.csproj", "{FE2746B3-C864-4836-8C4D-C718D7E71045}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtForAll.Events.Tests.DesignPatterns", "tests\ArtForAll.Events.Tests.DesignPatterns\ArtForAll.Events.Tests.DesignPatterns.csproj", "{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2746B3-C864-4836-8C4D-C718D7E71045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{7CF116DC-0EBC-4664-BC61-D9B3A9F1565B} = {094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97}
 		{6C835B56-EB47-4532-AE5B-6237D1A84EA5} = {094C0B3F-5EC1-49C5-B5BD-3EFBEA1D1F97}
 		{FE2746B3-C864-4836-8C4D-C718D7E71045} = {D71A9E7D-7006-4A4B-A1B2-7BCFE5DAACEA}
+		{77CD4E7D-8C71-4FEC-B22E-5BAD6CCBFE49} = {D71A9E7D-7006-4A4B-A1B2-7BCFE5DAACEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B25373B1-05C6-4804-BA8A-E2F905CFD4B8}

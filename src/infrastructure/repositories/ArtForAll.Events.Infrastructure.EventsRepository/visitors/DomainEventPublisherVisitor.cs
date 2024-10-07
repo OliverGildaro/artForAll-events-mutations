@@ -17,16 +17,19 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.visitors
         }
         public async Task Visit(EventCreated eventCreated)
         {
+            //here I can add operations on eventCreated entity
             await this.exceptionHandler.HandleAsync(async () => await this.snsMessenger.PublishAsync(eventCreated));
         }
 
         public async Task Visit(EventPatched eventPatched)
         {
+            //here I can add operations on EventPatched entity
             await this.exceptionHandler.HandleAsync(async () => await this.snsMessenger.PublishAsync(eventPatched));
         }
 
         public async Task Visit(EventPublished concretePublished)
         {
+            //here I can add operations on EventPublished entity
             await this.exceptionHandler.HandleAsync(async () => await this.snsMessenger.PublishAsync(concretePublished));
         }
 
