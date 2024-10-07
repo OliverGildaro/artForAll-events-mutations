@@ -43,7 +43,7 @@ namespace ArtForAll.Presentation.API.Controllers
 
             try
             {
-                var eventCreatedResult = await this.exceptionHandler.HandleAsync(() =>this.messages.Dispatch(command));
+                var eventCreatedResult = await this.exceptionHandler.HandleAsync(() => this.messages.Dispatch(command));
 
                 if (eventCreatedResult.IsFailure)
                 {
@@ -72,6 +72,33 @@ namespace ArtForAll.Presentation.API.Controllers
                 }));
 
                 if (patchResult.IsFailure)
+                {
+                    return BadRequest();
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{id}/name/{name}")]
+        [ProducesResponseType(203)]
+        public async Task<IActionResult> UpdateEventName(string id, string name)
+        {
+            try
+            {
+                var command = new UpdateNameEventCommand
+                {
+                    Id = id,
+                    Name = name
+                };
+
+                var updateResult = await this.exceptionHandler.HandleAsync(() => this.messages.Dispatch(command));
+
+                if (updateResult.IsFailure)
                 {
                     return BadRequest();
                 }

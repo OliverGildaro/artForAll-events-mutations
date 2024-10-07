@@ -42,5 +42,10 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.visitors
         {
             await this.exceptionHandler.HandleAsync(async () => await this.snsMessenger.PublishAsync(imagePublished));
         }
+
+        public async Task Visit(EventNameUpdated eventUpdated)
+        {
+            await this.exceptionHandler.HandleAsync(async () => await this.snsMessenger.PublishAsync(eventUpdated));
+        }
     }
 }

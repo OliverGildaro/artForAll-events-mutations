@@ -258,5 +258,24 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
         {
             this.Image.Update(contentType, fileName);
         }
+
+        public Result UpdateName(string name)
+        {
+            Tuple<string,string> prevNameStater = new(this.state, this.name);
+            if (String.IsNullOrWhiteSpace(name))
+            {
+                return Result.Failure("");
+            }
+            this.name = name;
+            var domainNameUpdated = new EventNameUpdated
+            {
+                PrevPK = prevNameStater,
+                Name = this.name,
+                State = this.State,
+            };
+
+            AddDomainEvent(domainNameUpdated);
+            return Result.Success();
+        }
     }
 }
