@@ -32,7 +32,6 @@ namespace ArtForAll.Events.Core.Commanding.Events.PatchEvent
 
             var @event = eventResult.Value;
             var eventRequest = new EventPatchRequest{
-                Name = @event.Name,
                 Description = @event.Description,
                 StartDate = @event.StartDate,
                 EndDate = @event.EndDate,
@@ -73,7 +72,6 @@ namespace ArtForAll.Events.Core.Commanding.Events.PatchEvent
             var priceResult = Price.CreateNew(eventRequest.Price.CurrencyExchange, eventRequest.Price.MonetaryValue);
 
             Result @eventUpdatedResult = @event.Update(
-                eventRequest.Name,
                 eventRequest.Description,
                 eventRequest.StartDate,
                 eventRequest.EndDate,

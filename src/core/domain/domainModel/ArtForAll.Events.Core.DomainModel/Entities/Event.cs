@@ -110,7 +110,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
             return new Event(name, description, startDate, endDate, capacity, type, state, address, price);
         }
 
-        public Result Update(string name,
+        public Result Update(
             string? description,
             DateTime startDate,
             DateTime endDate,
@@ -174,6 +174,7 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
 
         public Result Publish()
         {
+            Tuple<string, string> prevPk = new(this.name, this.state);
             var stateResult = this.state.Publish();
             if (stateResult.IsFailure)
             {
@@ -183,9 +184,18 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
 
             var eventPublished = new EventPublished
             {
+                PrevPK = prevPk,
                 Id = this.Id,
+                StartDate = this.StartDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
+                EndDate = this.EndDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
                 CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
-                StateEvent = this.state
+                Description = this.Description,
+                Name = this.Name,
+                Type = this.Type,
+                StateEvent = this.State,
+                Addres = this.Address,
+                Capacity = this.Capacity,
+                Price = this.Price,
             };
             this.AddDomainEvent(eventPublished);
 
@@ -220,8 +230,8 @@ namespace ArtForAll.Events.Core.DomainModel.Entities
         {
             var eventPatched = new EventPatched
             {
-                Id = this.Id,
-                CreatedAt = this.CreatedAt.ToString("yyyy-MM-dd"),
+                State = this.state,
+                Name = this.name,
                 PatchOperations = patchOperations
             };
 

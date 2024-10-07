@@ -7,8 +7,8 @@ namespace ArtForAll.Events.Core.DomainModel.Events
 
     public class EventPatched : IDomainEvent
     {
-        public string Id { get; set; }
-        public string CreatedAt { get; set; }
+        public string State { get; set; }
+        public string Name { get; set; }
         public IEnumerable<EventPatchOperation> PatchOperations { get; set; } =new List<EventPatchOperation>();
 
         public async Task Accept(IDomainEventVisitor visitor)
