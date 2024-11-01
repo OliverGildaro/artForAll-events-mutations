@@ -1,40 +1,39 @@
-﻿namespace ArtForAll.Events.Core.DomainModel.ValueObjects
+﻿namespace ArtForAll.Events.Core.DomainModel.ValueObjects;
+
+using ArtForAll.Shared.Contracts.DDD;
+using ArtForAll.Shared.ErrorHandler;
+
+public class Address : ValueObject
 {
-    using ArtForAll.Shared.Contracts.DDD;
-    using ArtForAll.Shared.ErrorHandler;
+    public static Address NoneAddress { get; private set; } = new Address("", "", "", "", "");
+    public string City { get; private set; }
+    public string Country { get; private set; }
+    public string Number { get; private set; }
+    public string Street { get; private set; }
+    public string ZipCode { get; private set; }
 
-    public class Address : ValueObject
+    protected Address() {}
+
+    private Address(string city, string country, string streetName, string Number, string zipCode)
     {
-        public static Address NoneAddress { get; private set; } = new Address("", "", "", "", "");
-        public string City { get; private set; }
-        public string Country { get; private set; }
-        public string Number { get; private set; }
-        public string Street { get; private set; }
-        public string ZipCode { get; private set; }
+        this.City = city;
+        this.Country = country;
+        this.Number = Number;
+        this.Street = streetName;
+        this.ZipCode = zipCode;
+    }
 
-        protected Address() {}
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        throw new System.NotImplementedException();
+    }
 
-        private Address(string city, string country, string streetName, string Number, string zipCode)
+    public static Result<Address, Error> CreateNew(string city, string country, string streetName, string Number, string zipCode)
+    {
+        if (string.IsNullOrEmpty(city))
         {
-            this.City = city;
-            this.Country = country;
-            this.Number = Number;
-            this.Street = streetName;
-            this.ZipCode = zipCode;
+            //Result
         }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static Result<Address, Error> CreateNew(string city, string country, string streetName, string Number, string zipCode)
-        {
-            if (string.IsNullOrEmpty(city))
-            {
-                //Result
-            }
-            return new Address(city, country, streetName, Number, zipCode);
-        }
+        return new Address(city, country, streetName, Number, zipCode);
     }
 }

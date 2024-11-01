@@ -1,26 +1,25 @@
-namespace ArtForAll.Events.Core.DomainModel.Entities
+namespace ArtForAll.Events.Core.DomainModel.Entities;
+
+using ArtForAll.Shared.Contracts.DDD;
+using ArtForAll.Shared.ErrorHandler;
+
+public class ImageBuffer : Entity
 {
-    using ArtForAll.Shared.Contracts.DDD;
-    using ArtForAll.Shared.ErrorHandler;
+    private byte[] content;
+    private string key;
 
-    public class ImageBuffer : Entity
+    private ImageBuffer(byte[] content, string imageId)
     {
-        private byte[] content;
-        private string key;
+        content = content ?? throw new ArgumentNullException(nameof(content), "Parameter cannot be null");
+        this.Id = imageId;
+        this.content = content;
+        this.key = $"images/{imageId}";
+    }
 
-        private ImageBuffer(byte[] content, string imageId)
-        {
-            content = content ?? throw new ArgumentNullException(nameof(content), "Parameter cannot be null");
-            this.Id = imageId;
-            this.content = content;
-            this.key = $"images/{imageId}";
-        }
-
-        public string Key => key;
-        public byte[] Content => content;
-        public static Result<ImageBuffer, Error> CreateNew(byte[] content, string imageId)
-        {
-            return new ImageBuffer(content, imageId);
-        }
+    public string Key => key;
+    public byte[] Content => content;
+    public static Result<ImageBuffer, Error> CreateNew(byte[] content, string imageId)
+    {
+        return new ImageBuffer(content, imageId);
     }
 }

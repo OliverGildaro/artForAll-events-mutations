@@ -1,58 +1,57 @@
-namespace ArtForAll.Core.DomainModel.ValueObjects
+namespace ArtForAll.Core.DomainModel.ValueObjects;
+
+using System.Collections.Generic;
+using ArtForAll.Generators;
+using ArtForAll.Shared.Contracts.DDD;
+using ArtForAll.Shared.ErrorHandler;
+
+[GenerateToString]
+public partial class TypeEvent : ValueObject
 {
-    using System.Collections.Generic;
-    using ArtForAll.Generators;
-    using ArtForAll.Shared.Contracts.DDD;
-    using ArtForAll.Shared.ErrorHandler;
+    private string value;
+    protected TypeEvent() { }
 
-    [GenerateToString]
-    public partial class TypeEvent : ValueObject
+    private TypeEvent(string value)
     {
-        private string value;
-        protected TypeEvent() { }
+        value = value ?? throw new ArgumentNullException(nameof(value), "Parameter cannot be null");
+        this.value = value;
+    }
 
-        private TypeEvent(string value)
+    public string Value => this.value;
+
+    public static Result<TypeEvent, Error> CreateNew(string value)
+    {
+        if (value == null)
         {
-            value = value ?? throw new ArgumentNullException(nameof(value), "Parameter cannot be null");
-            this.value = value;
+            return Errors.General.ValueIsRequired();
+        }
+        if (!Enum.IsDefined(typeof(TypeEventEnum), value))
+        {
+            return new Error($"The value is a not a valid {typeof(TypeEventEnum)}", "TypeEventEnum.value");
         }
 
-        public string Value => this.value;
+        return new TypeEvent(value);
+    }
 
-        public static Result<TypeEvent, Error> CreateNew(string value)
-        {
-            if (value == null)
-            {
-                return Errors.General.ValueIsRequired();
-            }
-            if (!Enum.IsDefined(typeof(TypeEventEnum), value))
-            {
-                return new Error($"The value is a not a valid {typeof(TypeEventEnum)}", "TypeEventEnum.value");
-            }
+    public static implicit operator string(TypeEvent type)
+    {
+        return type.Value;
+    }
 
-            return new TypeEvent(value);
-        }
+    public static implicit operator TypeEvent(string value)
+    {
+        return new TypeEvent(value);
+    }
 
-        public static implicit operator string(TypeEvent type)
-        {
-            return type.Value;
-        }
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value;
+    }
 
-        public static implicit operator TypeEvent(string value)
-        {
-            return new TypeEvent(value);
-        }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return Value;
-        }
-
-        private enum TypeEventEnum
-        {
-            Poetry,
-            Music,
-            Photography
-        }
+    private enum TypeEventEnum
+    {
+        Poetry,
+        Music,
+        Photography
     }
 }

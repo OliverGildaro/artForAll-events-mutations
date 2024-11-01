@@ -1,17 +1,16 @@
-namespace ArtForAll.Events.Core.DomainModel.Events
+namespace ArtForAll.Events.Core.DomainModel.Events;
+
+using ArtForAll.Core.DomainModel.Interfaces;
+using ArtForAll.Events.Core.DomainModel.Interfaces;
+
+public class EventDeleted : IDomainEvent
 {
-    using ArtForAll.Core.DomainModel.Interfaces;
-    using ArtForAll.Events.Core.DomainModel.Interfaces;
+    public string Id { get; set; }
+    public string CreatedAt { get; set; }
+    public string StateEvent { get; set; }
 
-    public class EventDeleted : IDomainEvent
+    public async Task Accept(IDomainEventVisitor visitor)
     {
-        public string Id { get; set; }
-        public string CreatedAt { get; set; }
-        public string StateEvent { get; set; }
-
-        public async Task Accept(IDomainEventVisitor visitor)
-        {
-            await visitor.Visit(this);
-        }
+        await visitor.Visit(this);
     }
 }
