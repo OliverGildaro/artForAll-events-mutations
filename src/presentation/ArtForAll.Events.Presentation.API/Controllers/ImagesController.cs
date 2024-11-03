@@ -2,7 +2,6 @@ using ArtForAll.Core.Commanding.Events.CreateEvent;
 using ArtForAll.Events.Presentation.API.Interfaces;
 using ArtForAll.Events.Presentation.DTOs.Images;
 using ArtForAll.Presentation.API.Utils;
-using Azure.Core;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 

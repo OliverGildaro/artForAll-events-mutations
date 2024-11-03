@@ -9,4 +9,5 @@ public interface IDomainEventVisitor
     Task Visit(EventPublished eventPublished);
     Task Visit(EventDeleted eventPublished);
     Task Visit(ImageAdded imagePublished);
+    Task Visit(AgendaAdded imagePublished);
 }

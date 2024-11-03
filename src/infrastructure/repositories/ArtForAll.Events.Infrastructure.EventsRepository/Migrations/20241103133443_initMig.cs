@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 {
     /// <inheritdoc />
-    public partial class initMigr : Migration
+    public partial class initMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -43,6 +43,28 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AgendaItem",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ScheduledDate = table.Column<DateTime>(type: "dateTime", nullable: false),
+                    Duration = table.Column<TimeSpan>(type: "time", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    EventId = table.Column<string>(type: "nvarchar(36)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AgendaItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AgendaItem_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
@@ -63,6 +85,11 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AgendaItem_EventId",
+                table: "AgendaItem",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Images_EventId",
                 table: "Images",
                 column: "EventId",
@@ -72,6 +99,9 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AgendaItem");
+
             migrationBuilder.DropTable(
                 name: "Images");
 

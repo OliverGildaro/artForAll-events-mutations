@@ -13,11 +13,11 @@ namespace ArtForAll.Events.S3ImagesBuckets
         private readonly IS3BucketsExceptionHandler exceptionHandler;
         private readonly string bucketName = "artforallbucket";
 
-        public EventImageService(IAmazonS3 s3, IS3BucketsExceptionHandler exceptionHandler)
-        {
-            this.s3 = s3;
-            this.exceptionHandler = exceptionHandler;
-        }
+        //public EventImageService(IAmazonS3 s3, IS3BucketsExceptionHandler exceptionHandler)
+        //{
+        //    this.s3 = s3;
+        //    this.exceptionHandler = exceptionHandler;
+        //}
 
         public async Task<Result> UploadImageAsync(ImageBuffer image)
         {

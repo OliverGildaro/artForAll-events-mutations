@@ -19,8 +19,10 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.extensions
         {
             var options = new ConsoleOptions();
             consoleModifier(options);
+
             services.AddTransient<IDomainEventVisitor, DomainEventPublisherVisitor>();
             services.AddTransient<IEventRepositoryExceptionHandler, EventRepositoryExceptionHandler>();
+
             services.AddTransient(provider => new EventsContext(
                 configuration.GetConnectionString("conectionDb"),
                 options.UseConsole,

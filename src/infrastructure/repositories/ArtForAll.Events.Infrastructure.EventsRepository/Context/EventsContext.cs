@@ -153,10 +153,44 @@ namespace OCP.PortalEvents.Repositories.Context
                     .WithOne()
                     .HasForeignKey<Image>(p => p.EventId);
 
+                x.HasMany(p => p.AgendaItems)
+                    .WithOne()
+                    .OnDelete(DeleteBehavior.Cascade);
+
+
                 x.ToTable(t => t.HasCheckConstraint("CK_Event_Capacity_Positive", "[Capacity] IS NULL OR [Capacity] >= 0"));
                 x.ToTable(t => t.HasCheckConstraint("CK_Price_MonetaryValue_Positive", "[MonetaryValue] IS NULL OR [MonetaryValue] >= 0"));
                 x.ToTable(t => t.HasCheckConstraint("CK_Event_StartDate_Now", "[StartDate] >= GETDATE()"));
                 x.ToTable(t => t.HasCheckConstraint("CK_Event_EndDate_AfterStart", "[EndDate] >= [StartDate]"));
+            });
+
+
+            modelBuilder.Entity<AgendaItem>(x =>
+            {
+                x.ToTable("AgendaItem")
+                    .HasKey(p => p.Id);
+
+                x.Property(p => p.Id)
+                    .HasMaxLength(36)
+                    .IsRequired();
+
+                x.Property(p => p.Name)
+                    .HasMaxLength(100)
+                    .IsUnicode()
+                    .IsRequired();
+
+                x.Property(p => p.Description)
+                    .IsUnicode()
+                    .IsRequired(false)
+                    .HasMaxLength(1000);
+
+                x.Property(p => p.ScheduledDate)
+                    .HasColumnType("dateTime")
+                    .IsRequired();
+
+                x.Property(p => p.Duration)
+                    .HasColumnType("time")
+                    .IsRequired();
             });
 
             modelBuilder.Entity<Image>(x =>
@@ -214,7 +248,7 @@ namespace OCP.PortalEvents.Repositories.Context
         {
             foreach (var domainEvent in domainEvents)
             {
-                await domainEvent.Accept(eventVisitor);
+                //await domainEvent.Accept(eventVisitor);
             }
             return Result.Success();
         }

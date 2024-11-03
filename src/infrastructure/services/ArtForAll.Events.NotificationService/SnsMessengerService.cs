@@ -9,10 +9,10 @@ namespace ArtForAll.Events.NotificationService
         private readonly IAmazonSimpleNotificationService sns;
         private string? topicArn;
 
-        public SnsMessengerService(IAmazonSimpleNotificationService sns)
-        {
-            this.sns = sns;
-        }
+        //public SnsMessengerService(IAmazonSimpleNotificationService sns)
+        //{
+        //    this.sns = sns;
+        //}
 
         public async Task<PublishResponse> PublishAsync<T>(T message)
         {

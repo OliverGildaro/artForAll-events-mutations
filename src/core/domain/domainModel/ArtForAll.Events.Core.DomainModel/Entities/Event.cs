@@ -20,6 +20,7 @@ public class Event : AggregateRoot, IEvent
     private Image image;
     private StateEvent state;
     private Price price;
+    private List<AgendaItem> agendaItems;
 
     private DateTime createdAt;
     private DateTime updatedAt;
@@ -62,6 +63,7 @@ public class Event : AggregateRoot, IEvent
     public Address Address => address;
     public Price Price => price;
     public StateEvent State => this.state;
+    public virtual IReadOnlyList<AgendaItem> AgendaItems => this.agendaItems;
     public virtual Image Image => this.image;
     public DateTime CreatedAt => createdAt;
     public DateTime UpdatedAt => updatedAt;
@@ -169,6 +171,32 @@ public class Event : AggregateRoot, IEvent
         this.AddDomainEvent(imageAdded);
 
         this.image = image;
+        return Result.Success();
+    }
+
+    public Result AddAgendaItem(AgendaItem item)
+    {
+        if (item == null)
+        {
+            return Result.Failure("");
+        }
+        if (this.agendaItems is null)
+        {
+            this.agendaItems = new List<AgendaItem>();
+        }
+
+        this.agendaItems.Add(item);
+
+        var agendaItem = new AgendaAdded
+        {
+            Id = item.Id,
+            ScheduleDate = item.ScheduledDate,
+            Duration = item.Duration,
+            Name = item.Name,
+            Description = item.Description
+        };
+
+        this.AddDomainEvent(agendaItem);
         return Result.Success();
     }
 

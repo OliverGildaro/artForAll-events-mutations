@@ -4,8 +4,6 @@ namespace ArtForAll.Presentation.API.Extensions
     using ArtForAll.Events.Presentation.API.Extensions;
     using ArtForAll.Events.Infrastructure.EFRepository.extensions;
     using ArtForAll.Events.NotificationService.extensions;
-    using ArtForAll.Shared.ExceptionHandler;
-    using ArtForAll.Shared.ExceptionHandler.Exceptions;
     using ArtForAll.Events.S3ImagesBuckets.Extensions;
     using ArtForAll.Events.Presentation.API.Interfaces;
     using ArtForAll.Events.Presentation.API.ExceptionHandlers;

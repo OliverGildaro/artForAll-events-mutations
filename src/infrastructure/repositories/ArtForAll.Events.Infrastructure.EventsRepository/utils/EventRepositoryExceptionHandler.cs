@@ -2,7 +2,6 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.utils
 {
     using ArtForAll.Events.Infrastructure.EFRepository.Interfaces;
     using ArtForAll.Shared.ExceptionHandler;
-    using Microsoft.Data.SqlClient;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Logging;
 
@@ -29,12 +28,6 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.utils
             });
 
             Catch<DbUpdateException>(ex =>
-            {
-                logger.LogError("Exception message" + ex.Message);
-                logger.LogError("Exception stacktrace" + ex.StackTrace);
-            });
-
-            Catch<SqlException>(ex =>
             {
                 logger.LogError("Exception message" + ex.Message);
                 logger.LogError("Exception stacktrace" + ex.StackTrace);

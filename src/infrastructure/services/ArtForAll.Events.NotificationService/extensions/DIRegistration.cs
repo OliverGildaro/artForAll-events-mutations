@@ -11,11 +11,11 @@ namespace ArtForAll.Events.NotificationService.extensions
         {
             services.AddSingleton<ISnsMessengerService, SnsMessengerService>();
             services.AddSingleton<ISnsMessengerExceptionHandler, SnsMessengerExceptionHandler>();
-            services.AddSingleton<IAmazonSimpleNotificationService>(sp =>
-            {
-                var sqsClient = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.SAEast1);
-                return sqsClient;
-            });
+            //services.AddSingleton<IAmazonSimpleNotificationService>(sp =>
+            //{
+            //    var sqsClient = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.SAEast1);
+            //    return sqsClient;
+            //});
 
             return services;
         }

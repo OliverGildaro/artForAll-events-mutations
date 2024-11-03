@@ -12,8 +12,8 @@ using OCP.PortalEvents.Repositories.Context;
 namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 {
     [DbContext(typeof(EventsContext))]
-    [Migration("20241003154827_initMigr")]
-    partial class initMigr
+    [Migration("20241103133443_initMig")]
+    partial class initMig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,39 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.AgendaItem", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time");
+
+                    b.Property<string>("EventId")
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("ScheduledDate")
+                        .HasColumnType("dateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventId");
+
+                    b.ToTable("AgendaItem", (string)null);
+                });
 
             modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Event", b =>
                 {
@@ -115,6 +148,14 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
                     b.ToTable("Images", (string)null);
                 });
 
+            modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.AgendaItem", b =>
+                {
+                    b.HasOne("ArtForAll.Events.Core.DomainModel.Entities.Event", null)
+                        .WithMany("AgendaItems")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Event", b =>
                 {
                     b.OwnsOne("ArtForAll.Events.Core.DomainModel.ValueObjects.Address", "Address", b1 =>
@@ -200,6 +241,8 @@ namespace ArtForAll.Events.Infrastructure.EFRepository.Migrations
 
             modelBuilder.Entity("ArtForAll.Events.Core.DomainModel.Entities.Event", b =>
                 {
+                    b.Navigation("AgendaItems");
+
                     b.Navigation("Image")
                         .IsRequired();
                 });

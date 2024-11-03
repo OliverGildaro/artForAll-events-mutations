@@ -10,8 +10,8 @@ namespace ArtForAll.Events.S3ImagesBuckets.Extensions
         public static IServiceCollection AddAmazonS3BucketsServices(this IServiceCollection services)
         {
             services.AddTransient<IEventImageService, EventImageService>();
-            services.AddSingleton<IAmazonS3, AmazonS3Client>();
             services.AddSingleton<IS3BucketsExceptionHandler, S3BucketsExceptionHandler>();
+            //services.AddSingleton<IAmazonS3, AmazonS3Client>();
             return services;
         }
     }

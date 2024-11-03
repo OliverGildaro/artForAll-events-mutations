@@ -9,7 +9,6 @@ namespace ArtForAll.Presentation.API.Controllers
     using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.JsonPatch;
     using Microsoft.AspNetCore.Mvc;
-    using Newtonsoft.Json;
 
     [Route("api/events")]
     [EnableCors("AllowSpecificOrigins")]
